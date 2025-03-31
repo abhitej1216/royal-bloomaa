@@ -1,0 +1,382 @@
+/*----------------------------------------*/
+/*  15 - Components - Product Tab
+/*----------------------------------------*/
+.royal-product-tab_area {
+	padding: 75px 0 0;
+	.tab-section_area {
+		display: flex;
+		justify-content: center;
+		padding-bottom: 25px;
+		.product-tab {
+			display: flex;
+			justify-content: center;
+			> ul {
+				&.product-menu {
+					> li {
+						> a {
+							padding: 0 20px;
+							font-size: 46px;
+							line-height: 82.8px;
+							font-style: italic;
+							display: block;
+							font-family: 'Playfair Display', serif;
+							text-transform: uppercase;
+							@include breakpoint(max-lg_device){
+								font-size: 28px;
+								line-height: 50px;
+							}
+							&.active{
+                                color: $primary-color;
+                                span{
+                                    border-bottom: 1px solid $primary-color;
+                                }
+                            }
+						}
+						&:last-child {
+							> a {
+								padding-right: 0;
+							}
+						}
+						&:hover {
+							> a {
+								> span {
+									&:before {
+										visibility: visible;
+										opacity: 1;
+										left: -10px;
+									}
+									&:after {
+										visibility: visible;
+										opacity: 1;
+										right: -10px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* ---Product Tab Area Two--- */
+.royal-product-tab_area-2 {
+	.tab-section_area {
+		display: flex;
+		justify-content: center;
+		padding-bottom: 25px;
+		.product-tab {
+			display: flex;
+			justify-content: center;
+			> ul {
+				&.product-menu {
+					> li {
+						> a {
+							border: 1px solid transparent;
+							padding: 10px 20px;
+							display: block;
+							font-family: 'Playfair Display', serif;
+							text-transform: uppercase;
+							@include breakpoint(max-xxs_device){
+								font-size: 16px;
+								text-transform: capitalize;
+								line-height: 1.2;
+								padding: 0 20px 0 0;
+								border: 0;
+							}
+							&.active {
+								border-color: $border-color;
+								color: $primary-color;
+							}
+						}
+						&:hover {
+							> a {
+								> span {
+									&:before {
+										visibility: visible;
+										opacity: 1;
+										left: -10px;
+									}
+									&:after {
+										visibility: visible;
+										opacity: 1;
+										right: -10px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ---Product Tab Area Three--- */
+.royal-product-tab_area-3{
+	padding-top: 90px;
+	.product-tab{
+		> ul{
+			border-bottom: 1px solid $border-color;
+			justify-content: center;
+			padding-bottom: 20px;
+			&.product-menu{
+				> li{
+					&:not(:last-child){
+						padding-right: 30px;
+					}
+					> a{
+						font-family: 'Playfair Display', serif;
+						font-style: italic;
+						font-weight: 600;
+						color: #888888;
+						&.active{
+							color: $text-color;
+							outline: 0;
+							> span{
+								&:before{
+									opacity: 1;
+									@include breakpoint(max-xxs_device){
+										opacity: 0;
+									}
+								}
+							}
+						}
+						> span{
+							position: relative;
+							border-bottom: 0 !important;
+							&:before{
+								background-color: $primary-color;
+								content: "";
+								width: 4px;
+								height: 4px;
+								position: absolute;
+								bottom: -10px;
+								left: 50%;
+								transform: translateX(-50%);
+								opacity: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ---Description Body--- */
+.desc-body{
+	padding-top: 65px;
+	display: flex;
+	justify-content: space-between;
+	@include breakpoint(max-sm_device){
+		display: block;
+	}
+	.inner-content{
+		max-width: 60%;
+		@include breakpoint(max-sm_device){
+			max-width: 100%;
+		}
+		> h3{
+			&.heading{
+				font-size: 24px;
+				line-height: 28.8px;
+				padding-bottom: 20px;
+			}
+		}
+		> p{
+			&.short-desc{
+				font-family: 'Roboto', sans-serif;
+				color: $charcoal-color;
+				padding-bottom: 20px;
+			}
+		}
+	}
+	.inner-img{
+		@include breakpoint(max-md_device){
+			padding-top: 25px;
+		}
+	}
+}
+
+/* ---Review Body--- */
+.review-body{
+	padding-top: 60px;
+	> h3{
+		&.heading{
+			padding-bottom: 25px;
+			font-size: 24px;
+		}
+	}
+	.user-info{
+		border-bottom: 1px solid $border-color;
+		padding-bottom: 30px;
+		display: flex;
+		@include breakpoint(max-xs_device){
+			display: block;
+			text-align: center;
+		}
+		> li{
+			&.user-avatar{
+				@include breakpoint(max-xs_device){
+					padding-bottom: 15px;
+				}
+			}
+			&.user-comment{
+				padding-left: 30px;
+				@include breakpoint(max-xs_device){
+					padding-left: 0;
+				}
+				.meta{
+					font-family: 'Roboto', sans-serif;
+					color: $charcoal-color;
+					padding-bottom: 5px;
+					strong{
+						font-size: 14px;
+					}
+					span{
+						font-size: 12px;
+					}
+				}
+				> p{
+					&.short-desc{
+						font-family: 'Roboto', sans-serif;
+						color: $charcoal-color;
+						font-size: 14px;
+						line-height: 25.2px;
+					}
+				}
+			}
+		}
+	}
+	.user-feedback{
+		padding-top: 55px;
+		> h3{
+			&.heading{
+				padding-bottom: 30px;
+				line-height: 33.6px;
+				font-size: 24px;
+			}
+		}
+		> p{
+			&.short-desc{
+				border-bottom: 1px solid $border-color;
+				font-family: 'Roboto', sans-serif;
+				color: $charcoal-color;
+				padding-bottom: 10px;
+				font-size: 14px;
+				line-height: 25.2px;
+			}
+		}
+		.rating-box{
+			padding-top: 55px;
+			display: flex;
+			> span{
+				padding-right: 25px;
+			}
+			> ul{
+				> li{
+					vertical-align: text-top;
+				}
+			}
+		}
+		form{
+			&.feedback-form{
+				padding-top: 15px;
+				.comment-field{
+					label{
+						&.label-field{
+							padding-bottom: 10px;
+							display: block;
+						}
+					}
+					textarea{
+						&.textarea-field{
+							border: 1px solid $border-color;
+							@extend %basetransition;
+							padding: 20px;
+							height: 150px;
+							width: 100%;
+						}
+						&:focus{
+							border: 1px solid $primary-color;
+						}
+					}
+				}
+				.group-input{
+					padding-top: 10px;
+					display: flex;
+					@include breakpoint(max-md_device){
+						justify-content: space-between;
+					}
+					@include breakpoint(max-md_device){
+						display: block;
+					}
+					label{
+						&.label-field{
+							padding-bottom: 10px;
+							display: block;
+						}
+					}
+					input{
+						&.input-field{
+							margin-right: 30px;
+							padding: 0 20px;
+							height: 60px;
+							width: 370px;
+							@include breakpoint(max-md_device){
+								width: 100%;
+								margin-right: 0;
+							}
+						}
+						&:focus{
+							border: 1px solid $primary-color;
+						}
+					}
+					.email-field{
+						@include breakpoint(max-md_device){
+							padding-top: 10px;
+						}
+					}
+				}
+				.field-checkbox{
+					padding-top: 10px;
+				}
+				.comment-btn_wrap{
+					padding-top: 20px;
+				}
+			}
+		}
+	}
+}
+
+/* ---Additional Info Body--- */
+.additional-info_body{
+	padding-top: 60px;
+}
+
+/* ---Product Tab Area Four--- */
+.royal-product-tab_area-4{
+	.royal-tab_content{
+		.desc-body{
+			.inner-content{
+				padding-left: 30px;
+				max-width: 100%;
+				width: calc(100% - 370px);
+				@include breakpoint(max-sm_device){
+					padding-top: 25px;
+					padding-left: 0;
+					max-width: 100%;
+					width: 100%;
+				}
+			}
+			.inner-img{
+				padding-top: 0;
+				width: 370px;
+				@include breakpoint(max-sm_device){
+					width: 100%;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,133 @@
+/*----------------------------------------*/
+/*  35 - Pages - Services
+/*----------------------------------------*/
+/* ---Intro Area--- */
+.intro-area{
+    padding-top: 125px;
+    @include breakpoint(max-sm_device){
+        padding-top: 75px;
+    }
+    .intro-content{
+        @include breakpoint(max-xs_device){
+            padding-bottom: 25px;
+        }
+        > p{
+            &.intro-short_desc{
+                font-size: 36px;
+                line-height: 46.8px;
+                @include breakpoint(max-lg_device){
+                    font-size: 26px;
+                    line-height: 33.8px;
+                }
+            }
+        }
+    }
+    .additional-content{
+        > p{
+            color: $charcoal-color;
+            &.short-desc{
+                font-family: 'Roboto', sans-serif;
+                font-size: 18px;
+                line-height: 28.8px;
+                padding-bottom: 25px;
+            }
+            &.exception-desc{
+                font-size: 14px;
+                line-height: 22.4px;
+            }
+        }
+    }
+}
+
+/* ---Services Banner Area--- */
+.services-banner_area{
+    /* --Service Section Space-- */
+    &.space-top-200{
+        padding-top: 200px;
+        @include breakpoint(max-md_device){
+            padding-top: 150px;
+        }
+        @include breakpoint(max-sm_device){
+            padding-top: 75px;
+        }
+    }
+    &.space-top-210{
+        padding-top: 210px;
+        @include breakpoint(max-md_device){
+            padding-top: 155px;
+        }
+        @include breakpoint(max-sm_device){
+            padding-top: 80px;
+        }
+    }
+    &.space-bottom-140{
+        padding-bottom: 140px;
+        @include breakpoint(max-sm_device){
+            padding-bottom: 80px;
+        }
+    }
+    /* --End Here-- */
+    .services-banner_img{
+        @include breakpoint(min-md_device){
+            margin-left: 40px;
+            border: 1px solid $primary-color;
+        }
+        .inner-img{
+            @include breakpoint(min-md_device){
+                margin-top: -70px;
+                margin-left: -40px;
+                padding-right: 40px;
+                padding-bottom: 40px;
+            }
+        }
+    }
+    .services-banner_content{
+        @include breakpoint(max-sm_device){
+            padding-top: 15px;
+        }
+        .section-title-2{
+            > h2{
+                &.heading{
+                    font-size: 36px;
+                    line-height: 50.4px;
+                }
+            }
+        }
+        > p{
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            line-height: 23.8px;
+            &.short-desc{
+                padding-bottom: 20px;
+            }
+            &.additional-desc{
+                padding-bottom: 40px;
+            }
+        }
+    }
+}
+
+/* ---Affiliate Banner Area--- */
+.affiliate-banner_area{
+    padding: 80px 0;
+    .affiliate-banner_content{
+        display: flex;
+        justify-content: space-between;
+        @include breakpoint(max-xxs_device){
+            display: block;
+            text-align: center;
+        }
+        > h2{
+            &.heading{
+                color: $white-color;
+            }
+        }
+        .banner-btn{
+            @include breakpoint(max-xxs_device){
+                display: flex;
+                justify-content: center;
+                padding-top: 30px;
+            }
+        }
+    }
+}

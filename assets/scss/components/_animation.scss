@@ -1,0 +1,468 @@
+/*----------------------------------------*/
+/*  19 - Components - Animation
+/*----------------------------------------*/
+
+/* ---Section SlideUp Animation--- */
+
+
+/* Slider Animation */
+.slick-active {
+	&.animation-style-01 {
+		.slide-content,
+		.inner-content {
+			> span{
+				animation-name: fadeInUp;
+				animation-delay: 2s;
+				animation-duration: 1s;
+				animation-fill-mode: both;
+			}
+			> h2 {
+				animation-name: fadeInUp;
+				animation-delay: 3s;
+				animation-duration: 1.3s;
+				animation-fill-mode: both;
+				
+			}
+			> p {
+				animation-name: fadeInUp;
+				animation-delay: 3.5s;
+				animation-duration: 1.3s;
+				animation-fill-mode: both;
+			}
+			> .slide-btn {
+				animation-name: fadeInUp;
+				animation-delay: 4s;
+				animation-duration: 1.3s;
+				animation-fill-mode: both;
+			}
+		}
+		.slide-img{
+			img{
+				animation-name: fadeInRight;
+				animation-delay: 2s;
+				animation-duration: 1s;
+				animation-fill-mode: both;
+			}
+			.img-border{
+				&:before{
+					animation-name: fadeIn;
+					animation-delay: 2.5s;
+					animation-duration: 2.5s;
+					animation-fill-mode: both;
+				}
+				span{
+					&:before{
+						animation-name: fadeIn;
+						animation-delay: 2.5s;
+						animation-duration: 2.5s;
+						animation-fill-mode: both;
+					}
+					&:after{
+						animation-name: fadeIn;
+						animation-delay: 2.5s;
+						animation-duration: 2.5s;
+						animation-fill-mode: both;
+					}
+				}
+			}
+		}
+	}
+	.mousemove-wrap{
+		.page-back{
+			img{
+				animation-name: fadeInUp;
+				animation-delay: 3s;
+				animation-duration: 2.8s;
+				animation-fill-mode: both;
+			}
+		}
+	}
+	&.animation-style-02 {
+		.slide-content,
+		.inner-content {
+			> h2 {
+				animation-name: fadeInLeft;
+				animation-delay: 2s;
+				animation-duration: 1.3s;
+				animation-fill-mode: both;
+				
+			}
+			> p {
+				animation-name: fadeInLeft;
+				animation-delay: 2.5s;
+				animation-duration: 1.3s;
+				animation-fill-mode: both;
+			}
+			> .slide-btn {
+				animation-name: fadeInLeft;
+				animation-delay: 3s;
+				animation-duration: 1.3s;
+				animation-fill-mode: both;
+			}
+		}
+		.slide-img{
+			img{
+				animation-name: fadeInRight;
+				animation-delay: 2s;
+				animation-duration: 1s;
+				animation-fill-mode: both;
+			}
+			.img-border{
+				&:before{
+					animation-name: fadeIn;
+					animation-delay: 2.5s;
+					animation-duration: 3s;
+					animation-fill-mode: both;
+				}
+				span{
+					&:before{
+						animation-name: fadeIn;
+						animation-delay: 2.5s;
+						animation-duration: 3s;
+						animation-fill-mode: both;
+					}
+					&:after{
+						animation-name: fadeIn;
+						animation-delay: 2.5s;
+						animation-duration: 3s;
+						animation-fill-mode: both;
+					}
+				}
+			}
+		}
+	}
+	&.animation-style-03 {
+		.slide-content {
+			h2 {
+				animation-name: fadeInUp;
+				animation-delay: 2s;
+				animation-duration: 1.3s;
+				animation-fill-mode: both;
+				
+			}
+			> p {
+				animation-name: fadeInRight;
+				animation-delay: 2.5s;
+				animation-duration: 1.3s;
+				animation-fill-mode: both;
+			}
+			> .slide-btn {
+				animation-name: fadeInRight;
+				animation-delay: 3s;
+				animation-duration: 1.3s;
+				animation-fill-mode: both;
+			}
+		}
+		.slide-img{
+			img{
+				animation-name: fadeInUp;
+				animation-delay: 3.5s;
+				animation-duration: 1.3s;
+				animation-fill-mode: both;
+			}
+		}
+	}
+	&.animation-style-04 {
+		.left-side_img{
+			img{
+				animation-name: fadeInLeft;
+				animation-delay: 3.5s;
+				animation-duration: 1.3s;
+				animation-fill-mode: both;
+			}
+		}
+		.slide-content {
+			> h2 {
+				animation-name: fadeInUp;
+				animation-delay: 2s;
+				animation-duration: 1.3s;
+				animation-fill-mode: both;
+				
+			}
+			> p {
+				animation-name: fadeInUp;
+				animation-delay: 2.5s;
+				animation-duration: 1.3s;
+				animation-fill-mode: both;
+			}
+			> .slide-btn {
+				animation-name: fadeInUp;
+				animation-delay: 3s;
+				animation-duration: 1.3s;
+				animation-fill-mode: both;
+			}
+		}
+		.right-side_img{
+			img{
+				animation-name: fadeInUp;
+				animation-delay: 4s;
+				animation-duration: 1.3s;
+				animation-fill-mode: both;
+			}
+		}
+	}
+}
+
+/* ---Slider Progress Bar--- */
+.slider-progress {
+	background: rgba(0, 0, 0, .3);
+	-webkit-animation: initial;
+	animation: initial;
+	height: 5px;
+	left: 0;
+	opacity: 0.8;
+	position: absolute;
+	top: 0;
+	z-index: 4;
+}
+
+.slick-current {
+    .slider-progress {
+        -webkit-animation: timebar 8s ease-in-out 0s 1 backwards;
+        animation: timebar 8s ease-in-out 0s 1 backwards;
+    }
+}
+
+// Keyframes
+@-webkit-keyframes timebar {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 100%;
+	}
+}
+@keyframes timebar {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+// Kyframes
+
+/*Top Up Keyframes*/
+@-webkit-keyframes royalSlideInUp {
+	0% {
+		-webkit-transform: translateY(250px);
+		transform: translateY(250px);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+@keyframes royalSlideInUp {
+	0% {
+		-webkit-transform: translateY(250px);
+		transform: translateY(250px);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+/*Top Down Keyframes*/
+
+ @-webkit-keyframes royalSlideInDown {
+	0% {
+	  -webkit-transform: translateY(0);
+			  transform: translateY(0);
+	}
+	100% {
+	  -webkit-transform: translateY(100px);
+			  transform: translateY(100px);
+	}
+  }
+  @keyframes royalSlideInDown {
+	0% {
+	  -webkit-transform: translateY(0);
+			  transform: translateY(0);
+	}
+	100% {
+	  -webkit-transform: translateY(100px);
+			  transform: translateY(100px);
+	}
+  }
+
+  .royalSlideInDown {
+	-webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+  
+// Begin Slide In Up Kyframes
+.slide-in-up {
+	-webkit-animation: slide-in-up 2s linear infinite alternate both;
+	animation: slide-in-up 2s linear infinite alternate both;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2020-1-7 17:0:13
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-in-up
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-in-up {
+	0% {
+		-webkit-transform: translateY(5px);
+		transform: translateY(5px);
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+@keyframes slide-in-up {
+	0% {
+		-webkit-transform: translateY(5px);
+		transform: translateY(5px);
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+// Slide In Up Kyframes End Here
+
+// Begin Slide In Right Kyframes
+.slide-in-right {
+	animation: slide-in-right 3s linear infinite alternate both;
+}
+@keyframes slide-in-right {
+	0% {
+		transform: translateX(150px);
+		filter: grayscale(0);
+	}
+	100% {
+		transform: translateX(0);
+		filter: grayscale(1);
+	}
+}
+
+// Slide In Right Kyframes End Here
+
+// Background Animation
+.kenburns-top {
+	animation: kenburns-top 5s ease-out both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2020-3-13 17:17:18
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation kenburns-top
+ * ----------------------------------------
+ */
+@-webkit-keyframes kenburns-top {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 16%;
+            transform-origin: 50% 16%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translateY(-15px);
+            transform: scale(1.25) translateY(-15px);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+  }
+}
+@keyframes kenburns-top {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 16%;
+            transform-origin: 50% 16%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translateY(-15px);
+            transform: scale(1.25) translateY(-15px);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+  }
+}
+
+// Section slideInUp
+.section-slide_up {
+	-webkit-animation: section-slide_up 1s linear 1 alternate both;
+	animation: section-slide_up 1s linear 1 alternate both;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2020-1-7 17:0:13
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation section-slide_up
+ * ----------------------------------------
+ */
+@-webkit-keyframes section-slide_up {
+	0% {
+		-webkit-transform: translateY(30px);
+		transform: translateY(30px);
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+@keyframes section-slide_up {
+	0% {
+		-webkit-transform: translateY(30px);
+		transform: translateY(30px);
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+// Section Slide Up Kyframes End Here
+
+// Rotate Center
+.rotate-center {
+	animation: rotate-center 7s linear infinite normal both;
+}
+
+@keyframes rotate-center {
+	100% {
+		transform: rotate(360deg);
+		transform-origin: 150px;
+	}
+}
+  
+/* ---Big Pulse--- */
+@keyframes big-pulse {
+	from {
+	  transform: scale3d(1, 1, 1);
+	}
+	50% {
+	  transform: scale3d(1.2, 1.2, 1.2);
+	}
+	to {
+	  transform: scale3d(1, 1, 1);
+	}
+  }
+  
+  .pulse {
+	animation-name: big-pulse;
+  }
+  
+  
+  
+  
+  

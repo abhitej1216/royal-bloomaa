@@ -1,0 +1,205 @@
+/*----------------------------------------*/
+/*  26 - Components - Popular Categories
+/*----------------------------------------*/
+.popular-categories_area{
+	.custom-container{
+		margin: 0 auto;
+		padding-left: 30px;
+		padding-right: 30px;
+		@include breakpoint(min-lg_device){
+			max-width: 1400px;
+		}
+		@include breakpoint(max-xs_device){
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+	&.popular-categories-bg-1{
+		background-image: url('../images/popular-categories/bg/1.jpg');
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		height: 660px;
+		position: relative;
+		@include breakpoint(max-sm_device){
+			height: auto;
+		}
+		&:before{
+			background-color: $text-color;
+			height: 100%;
+			width: 100%;
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0.3;
+		}
+	}
+	.popular-categories_item{
+		position: relative;
+		@include breakpoint(max-sm_device){
+			padding: 70px 0 80px;
+		}
+		.popular-categories_content{
+			text-align: center;
+			ul{
+				&.product-category{
+					display: flex;
+					padding-top: 95px;
+					@include breakpoint(max-sm_device){
+						padding-top: 55px;
+						flex-direction: column;
+					}
+					> li{
+						width: 25%;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						@extend %basetransition;
+						@include breakpoint(max-sm_device){
+							width: 100%;
+							&:not(:last-child){
+								padding-bottom: 30px;
+							}
+						}
+						> a{
+							background-color: $white-color;
+							width: 250px;
+							height: 250px;
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							border-radius: 100%;
+							@include breakpoint(max-lg_device){
+								width: 200px;
+								height: 200px;
+							}
+							@include breakpoint(max-md_device){
+								width: 150px;
+								height: 150px;
+							}
+							.product-category_icon{
+								color: $primary-color;
+								.royal-svg{
+									@include breakpoint(max-lg_device){
+										width: 40%;
+									}
+									@include breakpoint(max-md_device){
+										width: 30%;
+									}
+								}
+							}
+							.product-category_text{
+								padding-top: 20px;
+								@include breakpoint(max-lg_device){
+									padding-top: 10px;
+								}
+								@include breakpoint(max-md_device){
+									padding-top: 0;
+								}
+								span{
+									font-size: 25px;
+									@include breakpoint(max-lg_device){
+										font-size: 16px;
+									}
+								}
+							}
+						}
+						&:hover{
+							> a{
+								background-color: $primary-color;
+								.product-category_icon{
+									color: $white-color;
+								}
+								.product-category_text{
+									span{
+										color: $white-color;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			h2{
+				&.title{
+					font-size: 46px;
+					color: $white-color;
+					@include breakpoint(max-xs_device){
+						font-size: 30px;
+					}
+				}
+			}
+		}
+    }
+    &.popular-categories_area-2{
+        padding-top: 85px;
+        .popular-categories_item{
+			@include breakpoint(max-sm_device){
+				padding: 0;
+			}
+            .popular-categories_content{
+                ul{
+                    &.product-category{
+						padding-top: 35px;
+						@include breakpoint(max-sm_device){
+							flex-direction: unset;
+							flex-wrap: wrap;
+						}
+                        > li{
+                            @extend %basetransition;
+							max-width: 16.666%;
+							flex: 0 0 16.666%;
+							@include breakpoint(max-sm_device){
+								max-width: 33.333%;
+								flex: 0 0 33.333%;
+							}
+							@include breakpoint(max-sm_device){
+								max-width: 50%;
+								flex: 0 0 50%;
+							}
+                            > a{
+                                box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+								background-color: $white-color;
+								border: 7px solid $white-color;
+                                width: 150px;
+                                height: 150px;
+                                display: flex;
+								border-radius: 100%;
+								@include breakpoint(max-xl_device){
+									width: 120px;
+									height: 120px;
+									.royal-svg{
+										width: 30%;
+									}
+								}
+								@include breakpoint(max-md_device){
+									width: 100px;
+									height: 100px;
+								}
+                            }
+                            &:hover{
+                                > a{
+									background-color: $primary-color;
+                                    .product-category_icon{
+                                        color: $white-color;
+                                    }
+                                    .product-category_text{
+                                        span{
+                                            color: $white-color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                h2{
+                    &.title{
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+    }
+}

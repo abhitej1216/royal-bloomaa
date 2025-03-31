@@ -1,0 +1,26 @@
+/*----------------------------------------*/
+/*  16 - Components - Brand
+/*----------------------------------------*/
+.brand-area{
+    .brand-item{
+        display: flex;
+        justify-content: center;
+        opacity: 0.5;
+        @extend %basetransition;
+        &:hover{
+            opacity: 1;
+        }
+    }
+    &.brand-area-2{
+        .custom-container{
+            margin: 0 auto;
+            @include breakpoint(min-xxl_device){
+                max-width: 1170px;
+            }
+            @include breakpoint(max-xl_device){
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+    }
+}

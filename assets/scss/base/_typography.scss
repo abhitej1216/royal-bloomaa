@@ -1,0 +1,170 @@
+/*----------------------------------------*/
+/*  00 - Base - Typography
+/*----------------------------------------*/
+body {
+	font-size: 16px;
+    line-height: 24px;
+	font-weight: 400;
+	color: $text-color;
+	font-family: 'Roboto', sans-serif;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Playfair Display', serif;
+	color: $heading-color;
+	font-weight: 600;
+}
+
+p{
+	font-family: 'Playfair Display', serif;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+.img-full {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: block;
+}
+
+a{
+	color: $text-color;
+	font-size: 18px;
+	text-transform: capitalize;
+	&:hover{
+		&:hover{
+			color: $primary-color;
+		}
+	}
+}
+
+a,
+button,
+i {
+	@extend %basetransition;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+button,
+button:focus,
+.btn,
+.btn:focus,
+input,
+input:focus,
+select,
+textarea,
+.slick-slide {
+	text-decoration: none;
+	outline: 0;
+}
+
+input{
+	&.input-field{
+		border: 1px solid $border-color;
+	}
+}
+textarea{
+	&.textarea-field{
+		border: 1px solid $border-color;
+	}
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+input[type="checkbox"] + label {
+	position: relative;
+	padding-left: 30px;
+	line-height: 20px;
+	font-size: 14px;
+	font-weight: 400;
+	margin: 0;
+	&:before {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 20px;
+		height: 20px;
+		display: block;
+		border: 2px solid $border-color;
+		content: "";
+		@extend %basetransition;
+	}
+	&:after {
+		position: absolute;
+		left: 0;
+		top: 0;
+		display: block;
+		content: "\ea21";
+		font-family: "LaStudioIcons";
+		font-weight: 600;
+		font-size: 12px;
+		line-height: 20px;
+		opacity: 0;
+		width: 20px;
+		text-align: center;
+		@extend %basetransition;
+		color: #13aff0;
+	}
+}
+input[type="checkbox"]:checked + label {
+	&:before {
+		border: 2px solid $border-color;
+	}
+	&:after {
+		opacity: 1;
+	}
+}
+
+label{
+	margin-bottom: 0.5em;
+}
+
+button,
+.btn {
+	cursor: pointer;
+	border: 0;
+	padding: 0;
+	background: transparent;
+}
+
+.overflow-hidden{
+	overflow: hidden;
+}
+
+/* ---Font Style--- */
+.font-style_italic{
+	font-style: italic;
+}
+
+/* ---Line Height--- */
+.line-height-1{
+	line-height: 1;
+}

@@ -1,0 +1,66 @@
+/*----------------------------------------*/
+/*  24 - Components - Newsletter
+/*----------------------------------------*/
+.newsletter-area{
+    border-bottom: 1px solid $border-color;
+    &.newsletter-bg-1{
+        background-image: url('../images/newsletter/bg/1.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        padding: 130px 0;
+        .custom-container{
+            max-width: 830px;
+            margin: 0 auto;
+        }
+        .newsletter-info{
+            text-align: center;
+            h2{
+                &.heading{
+                    font-size: 46px;
+                    line-height: 46px;
+                    margin-bottom: 0;
+                    padding-bottom: 15px;
+                    @include breakpoint(max-xxs_device){
+                        font-size: 30px;
+                        line-height: 30px;
+                    }
+                }
+            }
+            p{
+                &.short-desc{
+                    font-size: 22px;
+                    line-height: 44px;
+                    @include breakpoint(max-xxs_device){
+                        font-size: 18px;
+                        line-height: 1.5;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---Newsletter Area Two--- */
+.newsletter-area-2{
+    .custom-container{
+        max-width: 1170px;
+        margin: 0 auto;
+    }
+    &.newsletter-bg-2{
+        background-image: url('../images/newsletter/bg/2.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        padding: 75px 0 60px;
+    }
+    .newsletter-info{
+        .subscribe-form{
+            input{
+                &.newsletter-input{
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}

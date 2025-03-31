@@ -1,0 +1,159 @@
+/*----------------------------------------*/
+/*  12 - Components - Button
+/*----------------------------------------*/
+.royal-btn {
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0);
+	background-color: $text-color;
+    color: $white-color !important;
+	width: 175px;
+	height: 45px;
+	line-height: 45px;
+	display: block;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 400;
+    @extend %basetransition;
+	font-size: 16px;
+	@include breakpoint(max-sm_device){
+		width: 120px;
+		height: 40px;
+		line-height: 40px;
+		font-size: 11px;
+	}
+	&:hover{
+		background-color: $primary-color;
+	}
+	&.transparent-btn{
+		background-color: transparent;
+	}
+	// Fullwidth
+	&.royal-btn_fullwidth{
+		width: 100%;
+	}
+	&.royal-btn_sm {
+		width: 120px;
+		height: 40px;
+		line-height: 40px;
+		font-size: 13px;
+	}
+	// Color
+	&.white-color{
+		background-color: $white-color;
+		color: $text-color !important;
+		&:hover{
+			background-color: $text-color;
+			color: $white-color !important;
+		}
+		&.specific-hover_color{
+			&:hover{
+				background-color: $primary-color;
+			}
+		}
+	}
+	&.sorbus-color{
+		background-color: $primary-color;
+		&:hover{
+			background-color: $text-color;
+		}
+	}
+	&.black-color{
+		border: 1px solid $black-color;
+		font-size: 14px;
+		color: $black-color !important;
+		@include breakpoint(max-sm_device){
+			font-size: 11px;
+		}
+		&:hover{
+			background-color: $primary-color;
+			border-color: $primary-color;
+			color: $white-color !important;
+		}
+		&.specific-hover_color{
+			&:hover{
+				background-color: $primary-color;
+			}
+		}
+	}
+	&.bokara-grey_color{
+		border: 1px solid $text-color;
+		color: $text-color !important;
+		width: auto;
+		padding: 0 30px;
+		&:hover{
+			background-color: $text-color;
+			color: $white-color !important;
+		}
+	}
+	&.whisper-color{
+		border: 1px solid $border-color;
+		color: $text-color !important;
+		&:hover{
+			background-color: $primary-color;
+			border-color: $primary-color;
+			color: $white-color !important;
+		}
+	}
+	&.white-border{
+		border: 1px solid $white-color;
+		color: $white-color;
+		&:hover{
+			border-color: $primary-color;
+		}
+	}
+	// Button Style
+	&.square-btn{
+		border-radius: 0;
+	}
+}
+
+// Additional Stuff
+.view-more-btn_wrap{
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	padding-top: 75px;
+}
+
+.load-more_wrap{
+	padding-top: 80px;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	.inner-wrap{
+		position: relative;
+		> a{
+			&.royal-btn{
+				&:before{
+					background-color: $black-color;
+					content: "";
+					height: 1px;
+					width: 60px;
+					position: absolute;
+					top: 50%;
+					left: -60px;
+					transform: translateY(-50%);
+					@extend %basetransition;
+				}
+				&:after{
+					background-color: $black-color;
+					content: "";
+					height: 1px;
+					width: 60px;
+					position: absolute;
+					top: 50%;
+					right: -60px;
+					transform: translateY(-50%);
+					@extend %basetransition;
+				}
+				&:hover{
+					&:before{
+						background-color: $primary-color;
+					}
+					&:after{
+						background-color: $primary-color;
+					}
+				}
+			}
+		}
+	}
+}

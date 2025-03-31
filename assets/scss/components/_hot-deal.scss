@@ -1,0 +1,435 @@
+
+/*----------------------------------------*/
+/*  28 - Components - Hot Deal
+/*----------------------------------------*/
+.hot-deal_area{
+	.custom-container{
+		margin: 0 auto;
+        @include breakpoint(min-xxl_device){
+            max-width: 1270px;
+		}
+		@include breakpoint(max-xl_device){
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+		@include breakpoint(max-xs_device){
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+	.section-title{
+		padding: 0 0 95px;
+		@include breakpoint(max-sm_device){
+			padding: 0 0 30px;
+		}
+	}
+	.hot-deal_item{
+		display: flex;
+		align-items: center;
+		@include breakpoint(max-sm_device){
+			flex-direction: column-reverse;
+		}
+		.hot-deal_img{
+			margin-bottom: 40px;
+			@include breakpoint(max-sm_device){
+				margin-bottom: 25px;
+				margin-top: 50px;
+				margin-right: 25px;
+			}
+			.inner-img{
+				position: relative;
+				top: 40px;
+				right: -40px;
+				@include breakpoint(max-sm_device){
+					top: 25px;
+					right: -25px;
+				}
+			}
+		}
+		.hot-deal_content{
+			border-top: 1px solid $text-color;
+			border-left: 1px solid $text-color;
+			border-right: 1px solid $text-color;
+			margin-left: 105px;
+			padding: 60px 60px 0;
+			position: relative;
+			@include breakpoint(max-lg_device){
+				padding: 30px 30px 0;
+			}
+			@include breakpoint(max-md_device){
+				padding: 20px 20px 0;
+				margin-left: 85px;
+			}
+			@include breakpoint(max-sm_device){
+				margin-left: 0;
+			}
+			&:before{
+				background-color: $text-color;
+				content: "";
+				width: 70px;
+				height: 1px;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				@include breakpoint(max-lg_device){
+					width: 30px;
+				}
+			}
+			&:after{
+				background-color: $text-color;
+				content: "";
+				width: calc(100% - 300px);
+				height: 1px;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				@include breakpoint(max-lg_device){
+					width: calc(100% - 245px);
+				}
+				@include breakpoint(max-sm_device){
+					width: calc(100% - 180px);
+				}
+			}
+			> h4{
+				font-size: 25px;
+				line-height: 31.2px;
+				@include breakpoint(max-md_device){
+					font-size: 20px;
+				}
+			}
+			> h2{
+				&.title{
+					font-size: 56px;
+					line-height: 67.2px;
+					padding-bottom: 20px;
+					@include breakpoint(max-xl_device){
+						font-size: 40px;
+					}
+					@include breakpoint(max-md_device){
+						font-size: 30px;
+						line-height: 1.2;
+						padding-bottom: 15px;
+					}
+				}
+			}
+			.product-price_wrap{
+				padding-bottom: 10px;
+				> span{
+					&.product-price{
+						font-family: 'Playfair Display', serif;
+						font-size: 36px;
+						color: $primary-color;
+						padding-left: 75px;
+						position: relative;
+						@include breakpoint(max-md_device){
+							font-size: 25px;
+						}
+						&:before{
+							background-color: $text-color;
+							content: "";
+							width: 60px;
+							height: 2px;
+							position: absolute;
+							top: 50%;
+							left: 0;
+							transform: translateY(-50%);
+						}
+					}
+				}
+			}
+			> p{
+				&.short-desc{
+					font-size: 18px;
+					line-height: 36px;
+					padding-bottom: 30px;
+					@include breakpoint(max-md_device){
+						font-size: 16px;
+						line-height: 1.5;
+						padding-bottom: 15px;
+					}
+				}
+			}
+			.hot-deal-btn_wrap{
+				margin-bottom: -22px;
+				padding-left: 40px;
+				@include breakpoint(max-lg_device){
+					padding-left: 20px;
+				}
+			}
+		}
+	}
+	.hot-deal_dots{
+		.slick-dots{
+			top: calc(100% + 55px);
+			@include breakpoint(md-device){
+				top: calc(100% + 25px);
+			}
+			@include breakpoint(max-sm_device){
+				top: calc(100% + 15px);
+			}
+		}
+	}
+	&.hot-deal_bg{
+		background-image: url('../images/hot-deal/bg/1.jpg');
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		height: 945px;
+		@include breakpoint(md-device){
+			height: 680px;
+		}
+		@include breakpoint(max-sm_device){
+			height: 960px;
+		}
+	}
+	&.hot-deal_area-2{
+		margin-top: -50px;
+		padding-bottom: 80px;
+		@include breakpoint(max-md_device){
+			margin-top: 0;
+			padding: 80px 0;
+		}
+		@include breakpoint(max-sm_device){
+			margin-top: 0;
+			padding: 80px 0 0;
+		}
+		.hot-deal_item{
+			cursor: pointer;
+			@include breakpoint(max-md_device){
+				align-items: flex-start;
+			}
+			.hot-deal_content{
+				margin-left: 0;
+				border: 0;
+				width: 55%;
+				@include breakpoint(max-xl_device){
+					padding: 80px 60px 0;
+				}
+				@include breakpoint(max-lg_device){
+					padding: 80px 0 0;
+				}
+				@include breakpoint(max-lg_device){
+					padding: 0;
+				}
+				@include breakpoint(max-sm_device){
+					padding-top: 30px;
+					width: 100%;
+				}
+				&:before{
+					content: none;
+				}
+				&:after{
+					content: none;
+				}
+				> h4{
+					&.product-offer{
+						color: $primary-color;
+						font-size: 16px;
+						@include breakpoint(max-lg_device){
+							font-size: 14px;
+							line-height: 25px;
+						}
+					}
+				}
+				> h2{
+					&.title{
+						position: relative;
+						font-weight: 300;
+						font-size: 46px;
+						max-width: 70%;
+						margin-bottom: 15px;
+						@include breakpoint(max-xl_device){
+							font-size: 36px;
+							line-height: 48px;
+						}
+						@include breakpoint(max-lg_device){
+							font-size: 28px;
+							line-height: 37px;
+						}
+						@include breakpoint(max-xxs_device){
+							max-width: 100%;
+						}
+						&:before{
+							background-color: $primary-color;
+							content: "";
+							bottom: 0;
+							left: 0;
+							height: 2px;
+							width: 80px;
+							position: absolute;
+						}
+					}
+				}
+				> p{
+					&.short-desc{
+						max-width: 80%;
+						@include breakpoint(max-xl_device){
+							font-size: 16px;
+							line-height: 32px;
+						}
+						@include breakpoint(max-xxs_device){
+							max-width: 100%;
+						}
+					}
+				}
+				.hot-deal-btn_wrap{
+					margin-bottom: 0;
+					padding-left: 0;
+					display: inline-block;
+				}
+			}
+			.hot-deal_img{
+				margin-bottom: 0;
+				width: 45%;
+				@include breakpoint(lg-device){
+					width: 70%;
+				}
+				@include breakpoint(max-sm_device){
+					margin-top: 0;
+					width: 100%;
+				}
+				.inner-img{
+					position: relative;
+					top: 0;
+					right: 60px;
+					@include breakpoint(max-lg_device){
+						right: 0;
+					}
+					&:before{
+						border: 10px solid $white-color;
+						content: "";
+						position: absolute;
+						width: calc(100% - 60px);
+						height: calc(100% - 60px);
+						top: 30px;
+						left: 30px;
+						@extend %basetransition;
+						pointer-events: none;
+					}
+				}
+			}
+			&:hover{
+				.inner-img{
+					&:before{
+						border: 5px solid $primary-color;
+						width: calc(100% - 30px);
+						height: calc(100% - 30px);
+						top: 15px;
+						left: 15px;
+					}
+				}
+			}
+		}
+	}
+	&.hot-deal_area-3{
+		&.hot-deal_bg-2{
+			background-image: url('../images/hot-deal/bg/2.jpg');
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			height: 750px;
+			@include breakpoint(max-lg_device){
+				height: 455px;
+			}
+			@include breakpoint(max-md_device){
+				height: 980px;
+			}
+			@include breakpoint(max-xs_device){
+				height: 770px;
+			}
+		}
+		.hot-deal_item{
+			align-items: flex-start;
+			@include breakpoint(lg-device){
+				align-items: center;
+			}
+			@include breakpoint(max-md_device){
+				display: block;
+			}
+			.hot-deal_img{
+				width: 50%;
+				margin-bottom: 0;
+				position: relative;
+				@include transition(0.5s ease-in-out);
+				@include breakpoint(max-md_device){
+					width: 100%;
+				}
+				@include breakpoint(max-sm_device){
+					margin: 0;
+				}
+				.inner-img{
+					position: absolute;
+					top: auto;
+					right: auto;
+					bottom: 0;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+				&:hover{
+					transform: translateY(-10px);
+				}
+			}
+			.hot-deal_content{
+				width: 50%;
+				border: 0;
+				padding: 0;
+				margin-left: 80px;
+				@include breakpoint(max-lg_device){
+					margin-left: 30px;
+				}
+				@include breakpoint(max-md_device){
+					padding-top: 30px;
+					margin-left: 0;
+					width: 100%;
+				}
+				&:before{
+					content: none;
+				}
+				&:after{
+					content: none;
+				}
+				> h4, h2, p{
+					font-weight: 300;
+				}
+				> h4{
+					@include breakpoint(max-lg_device){
+						font-size: 14px;
+						line-height: 16.8px;
+					}
+				}
+				> h2{
+					&.title{
+						@include breakpoint(max-lg_device){
+							font-size: 28px;
+							line-height: 36.4px;
+						}
+					}
+				}
+				> p{
+					&.short-desc{
+						@include breakpoint(max-lg_device){
+							padding-bottom: 15px;
+						}
+					}
+				}
+				.product-price_wrap{
+					span{
+						&.product-price{
+							@include breakpoint(max-lg_device){
+								font-size: 20px;
+								line-height: 20px;
+							}
+						}
+					}
+				}
+				.hot-deal-btn_wrap{
+					padding-left: 0;
+					padding-top: 40px;
+					@include breakpoint(max-lg_device){
+						padding-top: 25px;
+					}
+				}
+			}
+		}
+	}
+}

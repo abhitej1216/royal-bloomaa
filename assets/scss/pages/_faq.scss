@@ -1,0 +1,65 @@
+/*----------------------------------------*/
+/*  36 - Pages - FAQ
+/*----------------------------------------*/
+.frequently-area{
+    padding-top: 90px;
+    &.section-space_bottom{
+        padding-bottom: 90px;
+    }
+    > h2{
+        &.heading{
+            padding-bottom: 60px;
+            font-size: 24px;
+            line-height: 24px;
+        }
+    }
+    .frequently-item{
+        > ul{
+            > li{
+                &.has-sub,
+                &.children{
+                    border: 1px solid $border-color;
+                    padding: 20px;
+                    @include breakpoint(max-sm_device){
+                        margin-bottom: 20px;
+                    }
+                    &:not(:last-child){
+                        @include breakpoint(min-md_device){
+                            margin-bottom: 20px;
+                        }
+                    }
+                    > a{
+                        display: flex;
+                        justify-content: space-between;
+                        font-size: 14px;
+                        line-height: 20px;
+                        color: $charcoal-color;
+                        font-weight: 600;
+                        cursor: pointer;
+                    }
+                    > ul{
+                        &.frequently-body{
+                            display: none;
+                            padding-top: 20px;
+                            > li{
+                                font-size: 12px;
+                                line-height: 21.6px;
+                                color: $charcoal-color;
+                            }
+                        }
+                    }
+                    &.open{
+                        > a{
+                            color: $primary-color;
+                            > i{
+                                &:before{
+                                    content: "\ea68";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

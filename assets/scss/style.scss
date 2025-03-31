@@ -1,0 +1,119 @@
+/******************************
+
+INDEX:
+
+    00 - Base - Typography
+    01 - Base - Variables
+    02 - Base - Mixins
+
+    03 - Utilities - Helper
+    04 - Utilities - Color
+
+    10 - Components - Navigation
+    11 - Components - Slider
+    12 - Components - Button
+    13 - Components - Banner
+    14 - Components - Product
+    15 - Components - Product Tab
+    16 - Components - Brand
+    17 - Components - Form
+    18 - Components - Social Link
+    19 - Components - Animation
+    20 - Components - Breadcrumb
+    21 - Components - Modal
+    22 - Components - Hot Deal
+    23 - Components - Sidebar
+    24 - Components - Newsletter
+    25 - Components - Shipping
+    26 - Components - Popular Categories
+    27 - Components - Testimonial
+    28 - Components - Hot Deal
+
+    29 - Section - Header
+    30 - Section - Footer
+
+    31 - Pages - Blog
+    32 - Pages - Shop
+    33 - Pages - Product Layout
+    34 - Pages - About Us
+    35 - Pages - Services
+    36 - Pages - FAQ
+    37 - Pages - Contact Us
+    38 - Pages - Coming Soon
+    39 - Pages - Error 404
+    40 - Pages - My Account
+    41 - Pages - Login | Register
+    42 - Pages - Cart
+    43 - Pages - Wishlist
+    44 - Pages - Compare
+    45 - Pages - Blog
+
+******************************/
+
+/*
+
+    Primary Color:     #dd6b33;
+    Text Color:        #211e1c;
+    Border Color:      #e5e5e5;
+
+
+    Font Family List:-
+
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Playfair Display', serif;
+
+*/
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i|Roboto:400,400i,500,500i,700,700i&display=swap');
+
+//Base
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/typography';
+
+// Utilities
+@import 'utilities/helper';
+@import 'utilities/color';
+
+// Components
+@import 'components/button';
+@import 'components/navigation';
+@import 'components/slider';
+@import 'components/banner';
+@import 'components/product';
+@import 'components/product-tab';
+@import 'components/brand';
+@import 'components/form';
+@import 'components/social-link';
+@import 'components/animation';
+@import 'components/breadcrumb';
+@import 'components/modal';
+@import 'components/testimonial';
+@import 'components/instagram';
+@import 'components/shipping';
+@import 'components/newsletter';
+@import 'components/hot-deal';
+@import 'components/popular-categories';
+@import 'components/sidebar';
+
+// Section
+@import 'section/header';
+@import 'section/footer';
+
+// Pages
+@import 'pages/blog';
+@import 'pages/shop';
+@import 'pages/product-layout';
+@import 'pages/about-us';
+@import 'pages/services';
+@import 'pages/faq';
+@import 'pages/contact-us';
+@import 'pages/coming-soon';
+@import 'pages/error-404';
+@import 'pages/my-account';
+@import 'pages/login-register';
+@import 'pages/cart';
+@import 'pages/checkout';
+@import 'pages/wishlist';
+@import 'pages/compare';

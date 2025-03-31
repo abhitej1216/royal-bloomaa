@@ -1,0 +1,1392 @@
+/*----------------------------------------*/
+/*  13 - Components - Banner
+/*----------------------------------------*/
+.banner-area{
+	padding-top: 60px;
+	[class*="col-"]{
+		&:not(:last-child){
+			.banner-item{
+				@include breakpoint (max-sm_device){
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+}
+
+/* ---Banner Area Two--- */
+.banner-area-2 {
+	background-image: radial-gradient(center center, #fffdf6 0%, #ebf0e3 100%);
+	padding: 100px 0;
+	margin-top: 95px;
+    .banner-item{
+		.banner-content{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			> h4{
+				&.intro{
+					margin-bottom: 0;
+					padding-bottom: 55px;
+					font-style: italic;
+				}
+			}
+		}
+	}
+}
+
+/* ---Banner Area Three--- */
+.banner-area-3{
+	padding-top: 95px;
+	.banner-item{
+		.banner-content{
+			&.position-bottom_center{
+				position: absolute;
+				top: auto;
+				bottom: 0;
+				width: 100%;
+				cursor: pointer;
+			}
+			span{
+				font-size: 20px;
+				line-height: 24px;
+				padding: 25px;
+				display: block;
+				text-align: center;
+				pointer-events: none;
+				@include breakpoint(max-xl_device){
+					font-size: 21px;
+				}
+				@include breakpoint(max-lg_device){
+					font-size: 16px;
+				}
+				@include breakpoint(md-device){
+					font-size: 14px;
+					text-transform: capitalize !important;
+				}
+				&.white-text_color{
+					background-color: rgba(33,30,28,0.5);
+					color: $white-color;
+				}
+			}
+		}
+	}
+}
+
+/* ---Banner Area Five--- */
+.banner-area-5{
+	&.banner-bg-1{
+		background-image: url('../images/banner/bg/1.jpg');
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		height: 485px;
+		position: relative;
+		@include breakpoint (max-sm_device){
+			height: 350px;
+		}
+		&:before{
+			background-color: $black-color;
+			content: "";
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			opacity: 0.3;
+			z-index: -1;
+		}
+		.banner-item{
+			.banner-content{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				h2{
+					&.title{
+						font-size: 46px;
+						line-height: 46px;
+						color: $white-color;
+						margin-bottom: 0;
+						padding-bottom: 40px;
+						@include breakpoint (max-sm_device){
+							font-size: 25px;
+						}
+					}
+				}
+				.popup-btn{
+					@extend %basetransition;
+					&:hover{
+						animation: big-pulse 700ms ease-out 0s normal 1 both running;
+					}
+					a{
+						color: $white-color;
+						font-size: 40px;
+						border: 1px solid $white-color;
+						width: 90px;
+						height: 90px;
+						line-height: 90px;
+						border-radius: 100%;
+						display: block;
+						text-align: center;
+						@include breakpoint (max-sm_device){
+							font-size: 25px;
+							width: 50px;
+							height: 50px;
+							line-height: 50px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ---Banner Area Six--- */
+.banner-area-6{
+	padding: 130px 0 125px;
+	@include breakpoint(max-md_device){
+		padding: 100px 0 90px;
+	}
+	.custom-container{
+		display: flex;
+		margin: 0 auto;
+		padding-left: 30px;
+		padding-right: 30px;
+		@include breakpoint(min-xxl_device){
+			max-width: 1400px;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		@include breakpoint(max-xs_device){
+			padding-left: 0;
+			padding-right: 0;
+			margin: 0;
+		}
+	}
+	.banner-item{
+		padding: 30px;
+		@include breakpoint(max-xs_device){
+			padding: 0;
+		}
+		&.bg-snow{
+			position: relative;
+		}
+		.img-border{
+			@include breakpoint(max-md_device){
+				display: none;
+			}
+			&:before{
+				border-top: 7px solid $white-color;
+				border-bottom: 7px solid $white-color;
+				border-left: 7px solid $white-color;
+				border-right: 7px solid $white-color;
+				content: "";
+				position: absolute;
+				width: calc(100% - 145px);
+				height: calc(100% + 30px);
+				top: 30px;
+				left: 85px;
+				z-index: 1;
+				pointer-events: none;
+			}
+		}
+		.banner-img{
+			position: relative;
+			margin: -60px 0;
+			@include breakpoint(max-xs_device){
+				margin: 0;
+			}
+			.signature {
+				position: absolute;
+				left: 70px;
+				bottom: 50px;
+			}
+		}
+		.banner-content{
+			@include breakpoint(max-xs_device){
+				padding: 25px 20px 30px 20px;
+			}
+			span{
+				color: $primary-color;
+				display: block;
+				padding-bottom: 20px;
+				@include breakpoint(max-lg_device){
+					padding-bottom: 0;
+				}
+			}
+			h2{
+				&.title{
+					font-size: 56px;
+					line-height: 78.4px;
+					margin-bottom: 0;
+					position: relative;
+					padding-bottom: 35px;
+					margin-bottom: 20px;
+					@include breakpoint(max-xl_device){
+						font-size: 42px;
+						line-height: 58.8px;
+					}
+					@include breakpoint(max-lg_device){
+						font-size: 30px;
+						line-height: 1.2;
+						padding-bottom: 15px;
+						margin-bottom: 10px;
+					}
+					&:before{
+						background-color: $text-color;
+						content: "";
+						width: 80px;
+						height: 2px;
+						position: absolute;
+						left: 0;
+						bottom: 0;
+					}
+				}
+			}
+			p{
+				&.short-desc{
+					font-family: 'Roboto', sans-serif;
+					font-size: 18px;
+					line-height: 36px;
+					padding-bottom: 35px;
+					max-width: 82%;
+					@include breakpoint(max-lg_device){
+						font-size: 14px;
+						line-height: 1.8;
+						padding-bottom: 15px;
+					}
+					@include breakpoint(max-sm_device){
+						max-width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ---Banner Area Seven--- */
+.banner-area-7{
+	padding-top: 100px;
+	[class*="col-"]{
+		&:not(:last-child){
+			.banner-item{
+				@include breakpoint (max-sm_device){
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+/* ---Banner Area Eight--- */
+.banner-area-8{
+	padding-bottom: 160px;
+	.banner-item{
+		position: relative;
+		.banner-content{
+			border: 1px solid $primary-color;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 85%;
+			height: 85%;
+			pointer-events: none;
+			> h3{
+				&.title{
+					padding-top: 50px;
+					text-align: center;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+	.sub-banner{
+		[class*="col-"]{
+			&:not(:last-child){
+				padding-bottom: 30px;
+			}
+		}
+	}
+}
+
+/* ---Banner Area Nine--- */
+.banner-area-9{
+	.container-fluid{
+		padding: 0 140px;
+		overflow: hidden;
+		@include breakpoint(max-xl_device){
+			padding: 0 30px;
+		}
+	}
+	&.banner-bg-2{
+		background-image: url('../images/banner/bg/2.jpg');
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		height: 835px;
+		@include breakpoint(max-lg_device){
+			height: 440px;
+		}
+		@include breakpoint(max-xxs_device){
+			background-image: none;
+			background-color: #ccc;
+		}
+	}
+	.banner-item{
+		padding: 90px 0;
+		@include breakpoint(max-xl_device){
+			padding: 30px 0;
+		}
+		.inner-banner_item{
+			position: relative;
+			border-top: 1px solid $white-color;
+			border-bottom: 1px solid $white-color;
+			display: flex;
+			align-items: center;
+			&:before{
+				background-color: $white-color;
+				height: 185px;
+				width: 1px;
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				@include breakpoint(max-lg_device){
+					height: 110px;
+				}
+			}
+			&:after{
+				background-color: $white-color;
+				height: 185px;
+				width: 1px;
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				@include breakpoint(max-lg_device){
+					height: 110px;
+				}
+			}
+			.banner-content{
+				&:before{
+					background-color: $white-color;
+					height: 185px;
+					width: 1px;
+					content: "";
+					position: absolute;
+					top: 0;
+					right: 0;
+					@include breakpoint(max-lg_device){
+						height: 110px;
+					}
+				}
+				&:after{
+					background-color: $white-color;
+					height: 185px;
+					width: 1px;
+					content: "";
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					@include breakpoint(max-lg_device){
+						height: 110px;
+					}
+				}
+				.inner-content{
+					position: absolute;
+					top: 90px;
+					right: 0;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					@include breakpoint(max-lg_device){
+						top: 0;
+						justify-content: center;
+						height: 100%;
+					}
+					.inner-img{
+						@include breakpoint(max-lg_device){
+							width: 60%;
+						}
+					}
+					h2{
+						&.title{
+							font-size: 36px;
+							line-height: 43.2px;
+							text-align: center;
+							max-width: 85%;
+							margin-top: -60px;
+							&.white-text_color{
+								color: $white-color;
+							}
+							@include breakpoint(max-lg_device){
+								font-size: 25px;
+								line-height: 1.2;
+							}
+						}
+					}
+					.banner-btn_wrap{
+						padding-top: 30px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ---Banner With Border-- */
+.banner-with_border{
+	.banner-item{
+		.banner-inner_item{
+			display: flex;
+			align-items: center;
+			position: relative;
+			padding: 100px 0;
+			@include breakpoint(max-sm_device){
+				padding: 0;
+			}
+			@include breakpoint(max-xs_device){
+				display: block;
+			}
+			.img-border{
+				padding: 100px 0;
+				@include breakpoint(max-sm_device){
+					display: none;
+				}
+				&:before{
+					border-top: 1px solid $primary-color;
+					border-right: 1px solid $primary-color;
+					border-bottom: 1px solid $primary-color;
+					width: calc(100% - 600px);
+					height: 100%;
+					content: "";
+					position: absolute;
+					top: 0;
+					right: 90px;
+					pointer-events: none;
+					@include breakpoint(max-lg_device){
+						width: calc(100% - 300px);
+						right: 45px;
+					}
+				}
+				span{
+					&:before{
+						background-color: $primary-color;
+						content: "";
+						width: 1px;
+						position: absolute;
+					}
+					&:after{
+						background-color: $primary-color;
+						content: "";
+						width: 1px;
+						position: absolute;
+					}
+				}
+				&.img-border_left{
+					span{
+						&:before{
+							top: 0;
+							height: 60px;
+							left: 510px;
+							@include breakpoint(max-lg_device){
+								left: 255px;
+							}
+						}
+						&:after{
+							bottom: 0;
+							height: 60px;
+							left: 510px;
+							@include breakpoint(max-lg_device){
+								left: 255px;
+							}
+						}
+					}
+				}
+				&.img-border_right{
+					&:before{
+						border-left: 1px solid $primary-color !important;
+						border-right: 0 !important;
+						left: 90px;
+						@include breakpoint(max-lg_device){
+							left: 45px;
+						}
+					}
+					span{
+						&:before{
+							top: 0;
+							height: 60px;
+							right: 510px;
+							@include breakpoint(max-lg_device){
+								right: 255px;
+							}
+						}
+						&:after{
+							bottom: 0;
+							height: 60px;
+							right: 510px;
+							@include breakpoint(max-lg_device){
+								right: 255px;
+							}
+						}
+					}
+				}
+			}
+			.banner-img{
+				width: 40%;
+				@include breakpoint(max-xs_device){
+					width: calc(100% - 30px);
+					margin: 0 auto;
+				}
+			}
+			.banner-content{
+				width: 60%;
+				@include breakpoint(max-xs_device){
+					width: calc(100% - 30px);
+					margin: 0 auto;
+				}
+				.inner-content{
+					max-width: 80%;
+					@include breakpoint(max-sm_device){
+						max-width: 100%;
+					}
+					span{
+						color: $primary-color;
+						display: block;
+						padding-bottom: 20px;
+						@include breakpoint(max-sm_device){
+							padding-bottom: 10px;
+						}
+					}
+					h2{
+						&.title{
+							font-size: 50px;
+							line-height: 78.4px;
+							margin-bottom: 0;
+							position: relative;
+							padding-bottom: 35px;
+							margin-bottom: 20px;
+							@include breakpoint(max-xl_device){
+								font-size: 32px;
+								line-height: 50.4px;
+							}
+							@include breakpoint(max-lg_device){
+								font-size: 25px;
+								line-height: 1.2;
+							}
+							@include breakpoint(max-sm_device){
+								font-size: 18px;
+								padding-bottom: 15px;
+								margin-bottom: 10px;
+							}
+							&:before{
+								background-color: $text-color;
+								content: "";
+								width: 80px;
+								height: 2px;
+								position: absolute;
+								left: 0;
+								bottom: 0;
+							}
+						}
+					}
+					p{
+						&.short-desc{
+							font-size: 18px;
+							line-height: 36px;
+							max-width: 64%;
+							padding-bottom: 40px;
+							@include breakpoint(max-sm_device){
+								font-size: 14px;
+								line-height: 28px;
+								padding-bottom: 15px;
+							}
+						}
+					}
+					.heading-wrap{
+						position: relative;
+						padding-top: 30px;
+						h2{
+							&.heading{
+								color: rgba(221,107,51,0.2);
+								font-size: 150px;
+								letter-spacing: 1px;
+								line-height: 1;
+								@include breakpoint(max-xl_device){
+									font-size: 120px;
+								}
+								@include breakpoint(max-lg_device){
+									font-size: 80px;
+								}
+								@include breakpoint(max-sm_device){
+									font-size: 50px;
+								}
+							}
+						}
+					}
+				}
+				&.right-side{
+					.inner-content{
+						padding-left: 100px;
+						@include breakpoint(max-lg_device){
+							padding-left: 40px;
+						}
+						@include breakpoint(max-sm_device){
+							padding-left: 30px;
+						}
+						@include breakpoint(max-xs_device){
+							padding-left: 0;
+							padding-top: 25px;
+						}
+						p{
+							&.short-desc{
+								@include breakpoint(max-xl_device){
+									max-width: 80%;
+								}
+								@include breakpoint(max-lg_device){
+									max-width: 100%;
+								}
+							}
+						}
+						.heading-wrap{
+							margin-left: -190px;
+							@include breakpoint(max-sm_device){
+								margin-left: 0;
+							}
+						}
+					}
+				}
+				&.left-side{
+					.inner-content{
+						padding-left: 200px;
+						@include breakpoint(max-lg_device){
+							padding-left: 85px;
+						}
+						@include breakpoint(max-sm_device){
+							padding-left: 30px;
+						}
+						@include breakpoint(max-xs_device){
+							padding-left: 0;
+							padding-bottom: 25px;
+						}
+						p{
+							&.short-desc{
+								@include breakpoint(max-xl_device){
+									max-width: 100%;
+								}
+							}
+						}
+						.heading-wrap{
+							margin-left: 0;
+							left: calc(100% - 120px);
+							@include breakpoint(max-sm_device){
+								left: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ---Banner Area Ten--- */
+.banner-area-10{
+	padding-top: 100px;
+}
+
+/* ---Banner Area Eleven--- */
+.banner-area-11{
+	@include breakpoint(max-xs_device){
+		padding-top: 20px;
+	}
+	.banner-item{
+		.banner-inner_item{
+			@include breakpoint(sm-device){
+				flex-direction: row-reverse;
+			}
+		}
+	}
+}
+
+/* ---Banner Area Twelve--- */
+.banner-area-12{
+	padding-top: 85px;
+}
+
+/* ---Banner Area Thirteen--- */
+.banner-area-13{
+	padding-top: 100px;
+	.banner-item{
+		&.banner-img_border{
+			position: relative;
+			&:before{
+				background-color: transparent;
+				border-top: 5px solid $white-color;
+				border-left: 5px solid $white-color;
+				border-right: 5px solid $white-color;
+				content: "";
+				position: absolute;
+				top: 45px;
+				left: 45px;
+				width: calc(100% - 90px);
+				height: calc(100% - 90px);
+				opacity: 1;
+				@include breakpoint(max-xl_device){
+					top: 30px;
+					left: 30px;
+					width: calc(100% - 60px);
+					height: calc(100% - 60px);
+				}
+				@include breakpoint(max-xs_device){
+					top: 15px;
+					left: 15px;
+					width: calc(100% - 30px);
+					height: calc(100% - 30px);
+				}
+			}
+			.banner-img{
+				img{
+					&.img-full{
+						@include breakpoint(max-xxs_device){
+							height: 250px;
+							object-fit: cover;
+						}
+					}
+				}
+				&:before{
+					background-color: $white-color;
+					content: "";
+					position: absolute;
+					bottom: 45px;
+					left: 45px;
+					height: 5px;
+					width: 55px;
+					opacity: 1;
+					z-index: 1;
+					@include breakpoint(max-xl_device){
+						bottom: 30px;
+						left: 30px;
+					}
+					@include breakpoint(max-xs_device){
+						bottom: 15px;
+						left: 15px;
+					}
+				}
+				&:after{
+					background-color: $white-color;
+					content: "";
+					position: absolute;
+					bottom: 45px;
+					right: 45px;
+					height: 5px;
+					width: calc(100% - 380px);
+					opacity: 1;
+					z-index: 1;
+					@include breakpoint(max-xl_device){
+						bottom: 30px;
+						right: 30px;
+					}
+					@include breakpoint(max-xs_device){
+						bottom: 15px;
+						right: 15px;
+					}
+					@include breakpoint(max-xxs_device){
+						width: 55px;
+					}
+				}
+				.inner-img{
+					position: absolute;
+					top: 50%;
+					left: 135px;
+					transform: translateY(-50%);
+					@include breakpoint(max-xl_device){
+						width: 25%;
+					}
+				}
+				.inner-text{
+					position: absolute;
+					top: 50%;
+					left: 90px;
+					transform: translateY(-50%);
+					> h3{
+						&.product-offer{
+							color: $primary-color;
+							font-size: 90px;
+							padding-bottom: 10px;
+							@include breakpoint(max-xl_device){
+								font-size: 50px;
+							}
+						}
+					}
+					> p{
+						&.short-desc{
+							font-size: 28px;
+							@include breakpoint(max-xl_device){
+								font-size: 18px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.btn-wrap{
+			position: absolute;
+			bottom: 22.5px;
+			left: 130px;
+			@include breakpoint(max-xl_device){
+				bottom: 12px;
+			}
+			@include breakpoint(max-xxs_device){
+				left: 100px;
+			}
+		}
+	}
+}
+/* ---Banner Area Fourteen--- */
+.banner-area-14{
+	margin-top: 100px;
+	.custom-container{
+		margin: 0 auto;
+		@include breakpoint(min-xxl_device){
+			max-width: 1270px;
+		}
+	}
+	.banner-bg-3{
+		background-image: url('../images/banner/bg/3.jpg');
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		height: 485px;
+		position: relative;
+		@include breakpoint(max-sm_device){
+			height: 350px;
+		}
+		.banner-item{
+			.banner-content{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				.popup-btn{
+					@extend %basetransition;
+					a{
+						transform: translateY(0);
+						background-color: $white-color;
+						color: $text-color;
+						font-size: 30px;
+						border: 1px solid $white-color;
+						width: 70px;
+						height: 70px;
+						line-height: 71px;
+						border-radius: 100%;
+						display: block;
+						text-align: center;
+					}
+					&:hover{
+						animation: slide-in-up 1s linear infinite alternate both;
+						> a{
+							transform: translateY(-10px);
+							background-color: $text-color;
+							border-color: $text-color;
+							color: $white-color;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ---Banner Area Fifteen--- */
+.banner-area-15{
+	.banner-item{
+		position: relative;
+		cursor: pointer;
+		&.img-zoom_effect{
+			&:before{
+				opacity: 0.1;
+			}
+			&:hover{
+				&:before{
+					opacity: 0.4;
+				}
+			}
+		}
+		.inner-item{
+			padding: 0 0 26.5%;
+			@include breakpoint(max-md_device){
+				padding: 0 0 15%;
+			}
+			@include breakpoint(max-xs_device){
+				padding: 0 0 26%;
+			}
+			.banner-with-video_popup{
+				background-image: url('../images/banner/bg/3.jpg');
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: contain;
+				position: relative;
+				height: 31.8vw;
+				width: calc(100% - 80px);
+				margin: 0 auto;
+				@include breakpoint(max-md_device){
+					height: 50vw;
+				}
+				.banner-content{
+					height: 100%;
+					.banner-inner_content{
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
+						height: 100%;
+						.popup-btn{
+							@extend %basetransition;
+							a{
+								transform: translateY(0);
+								background-color: $white-color;
+								color: $text-color;
+								font-size: 30px;
+								border: 1px solid $white-color;
+								width: 70px;
+								height: 70px;
+								line-height: 71px;
+								border-radius: 100%;
+								display: block;
+								text-align: center;
+							}
+							&:hover{
+								animation: slide-in-up 1s linear infinite alternate both;
+								> a{
+									transform: translateY(-10px);
+									background-color: $text-color;
+									border-color: $text-color;
+									color: $white-color;
+								}
+							}
+						}
+					}
+					h3{
+						&.heading{
+							color: $white-color;
+							font-size: 40px;
+							text-align: center;
+							max-width: 75%;
+							margin: -10px auto 0;
+							@include breakpoint(max-xl_device){
+								font-size: 32px;
+								line-height: 41.6px;
+								max-width: 100%;
+							}
+							@include breakpoint(max-lg_device){
+								font-size: 25px;
+								line-height: 34px;
+							}
+							@include breakpoint(max-xs_device){
+								font-size: 16px;
+								line-height: 26px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.banner-btn_wrap{
+			display: flex;
+			justify-content: center;
+			padding-top: 35px;
+			&.ps-left_side{
+				justify-content: flex-start;
+			}
+		}
+		/* ---Image Border With Text--- */
+		.img-border-with_text{
+			overflow: hidden;
+			&:before{
+				border: 10px solid $white-color;
+				content: "";
+				position: absolute;
+				width: calc(100% - 120px);
+				height: calc(100% - 30px);
+				top: 60px;
+				left: 60px;
+				pointer-events: none;
+				z-index: 1;
+				@include breakpoint(max-lg_device){
+					width: calc(100% - 60px);
+					height: 100%;
+					top: 30px;
+					left: 30px;
+				}
+			}
+			.banner-text{
+				@include absCenter;
+				text-align: center;
+				width: 100%;
+				z-index: 1;
+				h3{
+					&.heading{
+						color: $white-color;
+						font-size: 60px;
+						line-height: 78px;
+						@include breakpoint(max-xl_device){
+							font-size: 46px;
+							line-height: 69.8px;
+						}
+						@include breakpoint(max-lg_device){
+							font-size: 30px;
+							line-height: 1.4;
+						}
+					}
+				}
+				p{
+					&.short-desc{
+						color: $white-color;
+						font-size: 28px;
+						line-height: 36.4px;
+						@include breakpoint(max-xl_device){
+							font-size: 22px;
+							line-height: 28.6px;
+						}
+						@include breakpoint(max-lg_device){
+							font-size: 16px;
+						}
+						@include breakpoint(max-xxs_device){
+							max-width: 70%;
+							margin: 0 auto;
+						}
+					}
+				}
+			}
+		}
+		/* ---Top Center Text--- */
+		.top-center_text{
+			position: absolute;
+			top: 80px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		/* ---Image Border With Text Two--- */
+		.img-border-with_text-2{
+			position: relative;
+			overflow: hidden;
+			&:before{
+				border: 1px solid $white-color;
+				content: "";
+				position: absolute;
+				width: calc(100% - 50px);
+				height: calc(100% - 50px);
+				top: 25px;
+				left: 25px;
+				z-index: 1;
+				pointer-events: none;
+			}
+			.banner-content{
+				&.text-bottom_center{
+					position: absolute;
+					bottom: 100px;
+					left: 50%;
+					transform: translateX(-50%);
+					width: 100%;
+					text-align: center;
+					z-index: 1;
+					span{
+						color: $white-color;
+						font-size: 22px;
+						line-height: 28.6px;
+						@include breakpoint(max-xl_device){
+							font-size: 18px;
+							line-height: 23.4px;
+						}
+					}
+					h3{
+						&.heading{
+							font-size: 46px;
+							line-height: 59.8px;
+							color: $white-color;
+							@include breakpoint(max-xl_device){
+								font-size: 32px;
+								line-height: 41.6px;
+							}
+							@include breakpoint(max-lg_device){
+								font-size: 25px;
+								line-height: 1.4;
+							}
+						}
+					}
+				}
+			}
+		}
+		/* ---Right Center Text--- */
+		.right-center_text{
+			.banner-content{
+				position: absolute;
+				top: 50%;
+				right: 60px;
+				transform: translateY(-50%);
+				text-align: center;
+				z-index: 1;
+				> span{
+					&.product-offer{
+						font-size: 26px;
+						@include breakpoint(max-xl_device){
+							font-size: 22px;
+						}
+						@include breakpoint(max-lg_device){
+							font-size: 16px;
+						}
+					}
+				}
+				> h3{
+					&.heading{
+						font-size: 66px;
+						line-height: 85.8px;
+						@include breakpoint(max-xl_device){
+							font-size: 56px;
+							line-height: 72.6px;
+						}
+						@include breakpoint(max-lg_device){
+							font-size: 30px;
+							line-height: 1.4;
+						}
+					}
+				}
+			}
+		}
+		/* ---Inner Images Wrap--- */
+		&.inner-img_wrap{
+			.inner-img{
+				position: absolute;
+				top: 50%;
+				left: 40px;
+				transform: translateY(-50%);
+			}
+		}
+		.left-center_text{
+			position: absolute;
+			top: 50%;
+			left: 60px;
+			transform: translateY(-50%);
+			pointer-events: none;
+			z-index: 1;
+			.inner-img{
+				position: relative;
+				left: 10%;
+				img{
+					width: 50%;
+				}
+			}
+			> h3{
+				&.heading{
+					max-width: 75%;
+					font-size: 46px;
+					@include breakpoint(max-lg_device){
+						font-size: 30px;
+						line-height: 1.4;
+					}
+				}
+			}
+			.banner-btn_wrap{
+				pointer-events: visible;
+			}
+		}
+	}
+}
+
+/* ---Banner Area Sixteen--- */
+.banner-area-16{
+	.container{
+		@include breakpoint(min-xxl_device){
+			max-width: 1330px;
+		}
+	}
+	&.banner-bg-4{
+		background-image: url('../images/banner/bg/4.jpg');
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		height: 800px;
+		margin-top: -2px;
+	}
+	.banner-item{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		.banner-inner_img{
+			@extend %basetransition;
+			img{
+				transform: translateY(0);
+			}
+			&:hover{
+				transform: translateY(-10px);
+				img{
+					animation: slide-in-up 1s linear infinite alternate both;
+				}
+			}
+		}
+		.banner-content{
+			text-align: center;
+			> span{
+				padding-top: 25px;
+				display: block;
+			}
+			> h3{
+				&.title{
+					padding-top: 10px;
+				}
+			}
+			.banner-btn_wrap{
+				display: flex;
+				justify-content: center;
+				padding-top: 45px;
+			}
+		}
+	}
+}
+
+/* ---Banner Area Seventeen--- */
+.banner-area-17{
+	.row{
+		position: relative;
+	}
+	.banner-item{
+		&.bg-height{
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			height: 990px;
+			&.banner-bg-5{
+				background-image: url('../images/banner/bg/8-1.jpg');
+				@include breakpoint(max-xl_device){
+					height: 670px;
+				}
+				@include breakpoint(max-md_device){
+					height: 600px;
+				}
+			}
+			&.banner-bg-6{
+				background-image: url('../images/banner/bg/8-2.jpg');
+				@include breakpoint(max-xl_device){
+					height: 605px;
+				}
+				@include breakpoint(max-md_device){
+					height: 400px;
+				}
+			}
+			&.banner-bg-7{
+				background-image: url('../images/banner/bg/8-3.jpg');
+				height: 760px;
+				@include breakpoint(max-xl_device){
+					height: 535px;
+				}
+				@include breakpoint(max-md_device){
+					height: 495px;
+				}
+			}
+			&.banner-bg-8{
+				background-image: url('../images/banner/bg/8-4.jpg');
+				height: 760px;
+				@include breakpoint(max-xl_device){
+					height: 535px;
+				}
+				@include breakpoint(max-md_device){
+					height: 450px;
+				}
+			}
+			&.banner-bg-9{
+				background-image: url('../images/banner/bg/8-5.jpg');
+				height: 760px;
+				@include breakpoint(max-xl_device){
+					height: 535px;
+				}
+				@include breakpoint(max-md_device){
+					height: 400px;
+				}
+			}
+		}
+		.banner-text{
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			text-align: center;
+			&.white-text_color{
+				> h2{
+					&.heading{
+						color: $white-color;
+					}
+				}
+				> p{
+					&.short-desc{
+						color: $white-color;
+					}
+				}
+			}
+			> h2{
+				&.heading{
+					font-size: 60px;
+					line-height: 78px;
+					padding-bottom: 15px;
+					@include breakpoint(max-lg_device){
+						font-size: 40px;
+						line-height: 52px;
+					}
+					@include breakpoint(max-md_device){
+						font-size: 30px;
+						line-height: 41px;
+					}
+				}
+			}
+			> p{
+				&.short-desc{
+					font-size: 28px;
+					line-height: 36.4px;
+					padding-bottom: 45px;
+					@include breakpoint(max-lg_device){
+						font-size: 20px;
+						line-height: 28px;
+						max-width: 85%;
+						margin: 0 auto;
+					}
+				}
+			}
+			.inner-text_img{
+				padding-bottom: 15px;
+			}
+			> h3{
+				&.sub-title{
+					color: #6a6a6a;
+					font-size: 60px;
+					line-height: 78px;
+					font-weight: 300;
+					@include breakpoint(max-xl_device){
+						font-size: 26px;
+						line-height: 33.8px;
+					}
+				}
+			}
+			.banner-btn_wrap{
+				display: flex;
+				justify-content: center;
+			}
+			&.banner-text_left{
+				right: auto;
+				left: 0;
+				max-width: 35%;
+				@include breakpoint(max-lg_device){
+					max-width: 50%;
+				}
+				@include breakpoint(max-xs_device){
+					max-width: 75%;
+				}
+				@include breakpoint(max-xxs_device){
+					max-width: 100%;
+				}
+				.banner-btn_wrap{
+					padding-top: 40px;
+				}
+			}
+		}
+	}
+}

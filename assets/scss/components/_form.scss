@@ -1,0 +1,31 @@
+/*----------------------------------------*/
+/*  17 - Components - Form
+/*----------------------------------------*/
+/* ---Newsletter Form--- */
+.newsletter-form_wrap {
+	.subscribe-form {
+		position: relative;
+		.newsletter-input {
+			border: 0;
+			border-bottom: 1px solid $text-color;
+			height: 50px;
+			width: 100%;
+			padding: 0 125px 0 0;
+			&::placeholder{
+				color: $text-color;
+			}
+		}
+		.newsletter-btn {
+			position: absolute;
+			font-size: 14px;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			text-align: center;
+			@extend %basetransition;
+			&:hover{
+				color: $primary-color;
+			}
+		}
+	}
+}
