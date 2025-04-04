@@ -1,0 +1,263 @@
+// Hero Section
+.hero-section {
+  padding: 100px 0;
+  background-color: #f8f8f8;
+
+  .hero-content {
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    p {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      font-size: 16px;
+    }
+  }
+
+  .hero-image {
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+}
+
+// Featured Products
+.featured-products {
+  padding: 80px 0;
+
+  .section-title {
+    margin-bottom: 50px;
+
+    h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    p {
+      font-size: 16px;
+      color: #666;
+    }
+  }
+
+  .product-card {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-image {
+      img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+    }
+
+    .product-content {
+      padding: 20px;
+
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .category {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+      }
+
+      .price {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Categories Section
+.categories-section {
+  padding: 80px 0;
+  background-color: #f8f8f8;
+
+  .section-title {
+    margin-bottom: 50px;
+
+    h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    p {
+      font-size: 16px;
+      color: #666;
+    }
+  }
+
+  .category-card {
+    position: relative;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 300px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.3s ease;
+    }
+
+    h3 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      margin: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      color: #fff;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .btn {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      border: 2px solid #fff;
+      padding: 8px 20px;
+      border-radius: 25px;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+
+      .btn {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// Newsletter Section
+.newsletter-section {
+  padding: 80px 0;
+  background-color: #333;
+  color: #fff;
+
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .newsletter-form {
+    .input-group {
+      max-width: 500px;
+      margin: 0 auto;
+
+      .form-control {
+        height: 50px;
+        padding: 0 20px;
+        border: none;
+        border-radius: 25px 0 0 25px;
+      }
+
+      .btn {
+        height: 50px;
+        padding: 0 30px;
+        border: none;
+        border-radius: 0 25px 25px 0;
+      }
+    }
+  }
+}
+
+// Responsive Styles
+@media (max-width: 991px) {
+  .hero-section {
+    padding: 60px 0;
+    text-align: center;
+
+    .hero-content {
+      margin-bottom: 30px;
+    }
+  }
+
+  .featured-products,
+  .categories-section,
+  .newsletter-section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-section {
+    .hero-content {
+      h1 {
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .featured-products,
+  .categories-section,
+  .newsletter-section {
+    .section-title {
+      h2 {
+        font-size: 28px;
+      }
+    }
+  }
+
+  .newsletter-section {
+    h2 {
+      font-size: 28px;
+    }
+  }
+} 

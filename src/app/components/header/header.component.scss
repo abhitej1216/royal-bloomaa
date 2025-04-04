@@ -1,0 +1,248 @@
+.main-header_area {
+  position: relative;
+  z-index: 999;
+
+  .main-header {
+    padding: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .header-logo {
+      img {
+        max-height: 60px;
+      }
+    }
+
+    .main-nav {
+      ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          position: relative;
+          margin: 0 15px;
+
+          a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 0;
+            display: block;
+
+            &:hover {
+              color: #007bff;
+            }
+
+            i {
+              margin-left: 5px;
+            }
+          }
+
+          .royal-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+
+            li {
+              margin: 0;
+              padding: 0;
+
+              a {
+                padding: 10px 15px;
+                border-bottom: 1px solid #eee;
+
+                &:hover {
+                  background: #f8f9fa;
+                }
+              }
+            }
+          }
+
+          &:hover {
+            .royal-dropdown {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+
+    .header-right_area {
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          margin-left: 20px;
+
+          a {
+            color: #333;
+            font-size: 20px;
+            cursor: pointer;
+
+            &:hover {
+              color: #007bff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobile-menu_wrapper,
+.offcanvas-search_wrapper,
+.offcanvas-minicart_wrapper {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100vh;
+  background: #fff;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  overflow-y: auto;
+
+  &.active {
+    right: 0;
+  }
+
+  .offcanvas-menu-inner {
+    padding: 20px;
+
+    .btn-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+
+      &:hover {
+        color: #007bff;
+      }
+    }
+  }
+}
+
+.mobile-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin-bottom: 10px;
+
+    a {
+      color: #333;
+      text-decoration: none;
+      display: block;
+      padding: 10px 0;
+
+      &:hover {
+        color: #007bff;
+      }
+    }
+
+    .sub-menu {
+      list-style: none;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+  }
+}
+
+.offcanvas-search {
+  padding: 20px 0;
+
+  .searchbox-info {
+    display: block;
+    margin-bottom: 15px;
+    color: #666;
+  }
+
+  .hm-searchbox {
+    position: relative;
+
+    input {
+      width: 100%;
+      padding: 10px 40px 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .search_btn {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #333;
+      cursor: pointer;
+
+      &:hover {
+        color: #007bff;
+      }
+    }
+  }
+}
+
+.minicart-content {
+  .minicart-heading {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+
+    h4 {
+      margin: 0;
+      font-size: 18px;
+    }
+  }
+
+  .minicart-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+  }
+
+  .minicart-item_total {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+    margin-top: 15px;
+  }
+
+  .minicart-btn_area {
+    margin-top: 15px;
+
+    .royal-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      text-align: center;
+      background: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-bottom: 10px;
+
+      &:hover {
+        background: #0056b3;
+      }
+    }
+  }
+} 

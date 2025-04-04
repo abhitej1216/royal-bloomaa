@@ -1,0 +1,207 @@
+<!-- Shop Header -->
+<section class="shop-header">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1>Our Products</h1>
+        <p>Discover our collection of premium fragrances</p>
+      </div>
+      <div class="col-lg-6">
+        <div class="shop-controls d-flex justify-content-lg-end align-items-center">
+          <div class="category-filter me-3">
+            <select class="form-select" (change)="filterByCategory($any($event.target).value)">
+              <option *ngFor="let category of categories" [value]="category.name" [selected]="category.name === selectedCategory">
+                {{category.name}}
+              </option>
+            </select>
+          </div>
+          <div class="sort-by">
+            <select class="form-select" (change)="sortProducts($any($event.target).value)">
+              <option value="name" [selected]="sortBy === 'name'">Sort by Name</option>
+              <option value="price" [selected]="sortBy === 'price'">Sort by Price</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product Grid -->
+<section class="product-grid">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6" *ngFor="let product of filteredProducts">
+        <div class="product-card">
+          <div class="product-image">
+            <img [src]="product.image" [alt]="product.name">
+            <div class="product-actions">
+              <button class="btn btn-light" title="Add to Wishlist">
+                <i class="lastudioicon-heart-2"></i>
+              </button>
+              <button class="btn btn-light" title="Quick View">
+                <i class="lastudioicon-eye"></i>
+              </button>
+              <button class="btn btn-light" title="Add to Cart">
+                <i class="lastudioicon-shopping-cart-1"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-content">
+            <span class="category">{{product.category}}</span>
+            <h3>{{product.name}}</h3>
+            <p class="description">{{product.description}}</p>
+            <div class="price">₹{{product.price}}</div>
+            <button class="btn btn-primary w-100">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Get updates about new products and special offers</p>
+        <form class="newsletter-form">
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Enter your email">
+            <button class="btn btn-primary" type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="shop-hero">
+  <div class="container">
+    <h1>Our Collection</h1>
+    <p>Discover our beautiful selection of handcrafted floral arrangements for every occasion</p>
+  </div>
+</section>
+
+<section class="shop-filters">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="filter-group">
+          <h3>Categories</h3>
+          <div class="form-check" *ngFor="let category of categories">
+            <input 
+              class="form-check-input" 
+              type="checkbox" 
+              [id]="'category-' + category.id"
+              [checked]="category.checked"
+              (change)="onCategoryChange(category.id)"
+            >
+            <label class="form-check-label" [for]="'category-' + category.id">
+              {{ category.name }}
+            </label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h3>Price Range</h3>
+          <div class="price-range">
+            <input 
+              type="number" 
+              class="form-control" 
+              placeholder="Min" 
+              [(ngModel)]="priceRange.min"
+              (change)="onPriceRangeChange()"
+            >
+            <span>-</span>
+            <input 
+              type="number" 
+              class="form-control" 
+              placeholder="Max" 
+              [(ngModel)]="priceRange.max"
+              (change)="onPriceRangeChange()"
+            >
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h3>Occasion</h3>
+          <div class="form-check" *ngFor="let occasion of occasions">
+            <input 
+              class="form-check-input" 
+              type="checkbox" 
+              [id]="'occasion-' + occasion.id"
+              [checked]="occasion.checked"
+              (change)="onOccasionChange(occasion.id)"
+            >
+            <label class="form-check-label" [for]="'occasion-' + occasion.id">
+              {{ occasion.name }}
+            </label>
+          </div>
+        </div>
+
+        <button class="btn btn-primary w-100 mt-4" (click)="resetFilters()">
+          Reset Filters
+        </button>
+      </div>
+
+      <div class="col-lg-9">
+        <div class="row">
+          <div class="col-md-4" *ngFor="let product of filteredProducts">
+            <div class="product-card">
+              <div class="product-image">
+                <img [src]="product.image" [alt]="product.name">
+              </div>
+              <div class="product-content">
+                <div class="product-meta">
+                  <span class="category">{{ product.category }}</span>
+                  <div class="rating">
+                    <i class="fas fa-star" *ngFor="let star of [1,2,3,4,5]"></i>
+                  </div>
+                </div>
+                <h3>
+                  <a [routerLink]="['/shop', product.id]">{{ product.name }}</a>
+                </h3>
+                <div class="price">
+                  <span class="original-price" *ngIf="product.originalPrice">
+                    ${{ product.originalPrice }}
+                  </span>
+                  ${{ product.price }}
+                </div>
+                <button class="btn-add-to-cart" (click)="addToCart(product)">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <nav *ngIf="totalPages > 1">
+          <ul class="pagination">
+            <li class="page-item" [class.disabled]="currentPage === 1">
+              <a class="page-link" (click)="onPageChange(currentPage - 1)">
+                Previous
+              </a>
+            </li>
+            <li 
+              class="page-item" 
+              *ngFor="let page of getPages()"
+              [class.active]="page === currentPage"
+            >
+              <a class="page-link" (click)="onPageChange(page)">
+                {{ page }}
+              </a>
+            </li>
+            <li class="page-item" [class.disabled]="currentPage === totalPages">
+              <a class="page-link" (click)="onPageChange(currentPage + 1)">
+                Next
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section> 

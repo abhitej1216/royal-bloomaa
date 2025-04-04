@@ -1,0 +1,98 @@
+<section class="cart-page">
+  <div class="container">
+    <h1>Shopping Cart</h1>
+
+    <ng-container *ngIf="(cartItems$ | async)?.length; else emptyCart">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="cart-table">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of cartItems$ | async">
+                  <td data-label="Product">
+                    <div class="product-info">
+                      <div class="product-image">
+                        <img [src]="item.image" [alt]="item.name">
+                      </div>
+                      <div class="product-details">
+                        <h3>
+                          <a [routerLink]="['/shop', item.id]">{{ item.name }}</a>
+                        </h3>
+                        <span class="price">${{ item.price }}</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td data-label="Price">${{ item.price }}</td>
+                  <td data-label="Quantity">
+                    <div class="quantity-control">
+                      <button 
+                        (click)="updateQuantity(item.id, item.quantity - 1)"
+                        [disabled]="item.quantity <= 1"
+                      >
+                        <i class="fas fa-minus"></i>
+                      </button>
+                      <input 
+                        type="number" 
+                        [value]="item.quantity"
+                        (change)="updateQuantity(item.id, +$event.target.value)"
+                        min="1"
+                      >
+                      <button (click)="updateQuantity(item.id, item.quantity + 1)">
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td data-label="Total">${{ item.price * item.quantity }}</td>
+                  <td>
+                    <button class="remove-btn" (click)="removeFromCart(item.id)">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="cart-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-item">
+              <span>Subtotal</span>
+              <span>${{ total$ | async }}</span>
+            </div>
+            <div class="summary-item">
+              <span>Shipping</span>
+              <span>Free</span>
+            </div>
+            <div class="summary-item total">
+              <span>Total</span>
+              <span>${{ total$ | async }}</span>
+            </div>
+            <button class="btn-checkout" (click)="checkout()">
+              Proceed to Checkout
+            </button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-template #emptyCart>
+      <div class="cart-empty">
+        <i class="fas fa-shopping-cart"></i>
+        <h2>Your cart is empty</h2>
+        <p>Looks like you haven't added any items to your cart yet.</p>
+        <a routerLink="/shop" class="btn btn-primary btn-shop">Continue Shopping</a>
+      </div>
+    </ng-template>
+  </div>
+</section> 

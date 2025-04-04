@@ -1,0 +1,53 @@
+<div class="main-wrapper">
+  <!-- Header Component -->
+  <app-header></app-header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer Component -->
+  <app-footer></app-footer>
+
+  <!-- Fixed Footer Bar -->
+  <div class="fixed-footerbar">
+    <ul>
+      <li>
+        <a routerLink="/login">
+          <i class="lastudioicon-circle-10"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#searchBar" class="search-btn toolbar-btn">
+          <i class="lastudioicon-zoom-1"></i>
+        </a>
+      </li>
+      <li class="with-counter">
+        <a routerLink="/wishlist">
+          <i class="lastudioicon-heart-2"></i>
+          <span class="cart-item_count">3</span>
+        </a>
+      </li>
+      <li class="with-counter">
+        <a routerLink="/compare">
+          <i class="lastudioicon-chart-bar-32-2"></i>
+          <span class="cart-item_count">3</span>
+        </a>
+      </li>
+      <li class="minicart-wrap with-counter">
+        <a href="#miniCart" class="minicart-btn toolbar-btn position-relative">
+          <div class="minicart-count_area">
+            <i class="lastudioicon-bag-20"></i>
+            <span class="cart-item_count">3</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Scroll To Top -->
+<a class="scroll-to-top" href="">
+  <i class="lastudioicon-up-arrow"></i>
+</a> 
