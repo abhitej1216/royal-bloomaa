@@ -2,31 +2,63 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { CarouselComponent } from '../../components/carousel/carousel.component';
+import { QualityMetricsComponent } from '../../components/quality-metrics/quality-metrics.component';
+import { TestimonialsComponent } from '../../components/testimonials/testimonials.component';
+import { NewsletterComponent } from '../../components/newsletter/newsletter.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterModule, CarouselComponent],
+  imports: [
+    CommonModule, 
+    RouterModule, 
+    CarouselComponent, 
+    QualityMetricsComponent,
+    TestimonialsComponent,
+    NewsletterComponent
+  ],
   templateUrl: './home.component.html',
   styles: [`
     .home-container {
-      padding-top: 20px;
+      padding: 0;
     }
 
     .breadcrumb-nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      background: transparent;
       padding: 15px 0;
-      margin-bottom: 20px;
     }
 
     .breadcrumb {
       margin: 0;
-      padding: 0;
+      padding: 0 20px;
       background: none;
     }
 
     .breadcrumb-item a {
-      color: #007bff;
+      color: #fff;
       text-decoration: none;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .breadcrumb-item.active {
+      color: rgba(255, 255, 255, 0.8);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+      color: rgba(255, 255, 255, 0.8);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 768px) {
+      .breadcrumb {
+        padding: 0 15px;
+      }
     }
 
     .section-header {
