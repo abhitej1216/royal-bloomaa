@@ -42,44 +42,62 @@ interface PriceRange {
 })
 export class ShopComponent implements OnInit {
   categories: Category[] = [
-    { id: 1, name: 'Bouquets', checked: false },
-    { id: 2, name: 'Arrangements', checked: false },
-    { id: 3, name: 'Single Flowers', checked: false },
-    { id: 4, name: 'Plants', checked: false },
-    { id: 5, name: 'Accessories', checked: false }
+    { id: 1, name: 'Perfumes', checked: false },
+    { id: 2, name: 'Attars', checked: false },
+    { id: 3, name: 'Body Mists', checked: false },
+    { id: 4, name: 'Gift Sets', checked: false }
   ];
 
   occasions: Occasion[] = [
-    { id: 1, name: 'Birthday', checked: false },
-    { id: 2, name: 'Wedding', checked: false },
-    { id: 3, name: 'Anniversary', checked: false },
-    { id: 4, name: 'Sympathy', checked: false },
-    { id: 5, name: 'Thank You', checked: false }
+    { id: 1, name: 'Casual', checked: false },
+    { id: 2, name: 'Business', checked: false },
+    { id: 3, name: 'Evening', checked: false },
+    { id: 4, name: 'Special Occasion', checked: false }
   ];
 
   products: Product[] = [
     {
       id: 1,
-      name: 'Elegant Rose Bouquet',
-      category: 'Bouquets',
-      occasion: 'Anniversary',
+      name: 'Marine Fresh',
+      category: 'Perfumes',
+      occasion: 'Casual',
       price: 89.99,
       originalPrice: 99.99,
-      image: 'assets/images/products/bouquet-1.jpg',
+      image: 'assets/images/products/marine-fresh.png',
       rating: 5,
-      description: 'A beautiful bouquet of roses'
+      description: 'A fresh and invigorating marine scent'
     },
     {
       id: 2,
-      name: 'Spring Garden Arrangement',
-      category: 'Arrangements',
-      occasion: 'Birthday',
+      name: 'Pine Elixir',
+      category: 'Perfumes',
+      occasion: 'Casual',
       price: 129.99,
-      image: 'assets/images/products/arrangement-1.jpg',
+      image: 'assets/images/products/pine-elixir.png',
       rating: 4,
-      description: 'A lovely arrangement for a birthday'
+      description: 'A woody and refreshing pine fragrance'
     },
-    // Add more products here
+    {
+      id: 3,
+      name: 'Office Hour',
+      category: 'Perfumes',
+      occasion: 'Business',
+      price: 149.99,
+      image: 'assets/images/products/office-hour.png',
+      rating: 5,
+      description: 'A sophisticated and professional scent'
+    },
+    {
+      id: 4,
+      name: 'Violet Essence',
+      category: 'Perfumes',
+      occasion: 'Evening',
+      price: 119.99,
+      originalPrice: 139.99,
+      image: 'assets/images/products/violet-essence.png',
+      rating: 4,
+      description: 'A romantic floral fragrance'
+    }
   ];
 
   filteredProducts: Product[] = [];

@@ -204,4 +204,96 @@
       </div>
     </div>
   </div>
-</section> 
+</section>
+
+<div class="shop-banner">
+  <img 
+    src="assets/images/banners/shop-banner.jpg" 
+    alt="Find Your Perfect Fragrance with Royal Bloomaa"
+    class="banner-image"
+  >
+</div>
+
+<div class="container">
+  <div class="shop-content">
+    <div class="filters-section">
+      <h3>Filters</h3>
+      
+      <div class="filter-group">
+        <h4>Categories</h4>
+        <div class="filter-options">
+          <div *ngFor="let category of categories" class="filter-option">
+            <input 
+              type="checkbox" 
+              [id]="'cat-' + category.id"
+              [checked]="category.checked"
+              (change)="onCategoryChange(category.id)"
+            >
+            <label [for]="'cat-' + category.id">{{category.name}}</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Price Range</h4>
+        <div class="price-inputs">
+          <input 
+            type="number" 
+            [(ngModel)]="priceRange.min" 
+            placeholder="Min"
+            (change)="onPriceRangeChange()"
+          >
+          <span>to</span>
+          <input 
+            type="number" 
+            [(ngModel)]="priceRange.max" 
+            placeholder="Max"
+            (change)="onPriceRangeChange()"
+          >
+        </div>
+      </div>
+
+      <button class="reset-btn" (click)="resetFilters()">Reset Filters</button>
+    </div>
+
+    <div class="products-section">
+      <div class="sort-section">
+        <select [(ngModel)]="sortBy" (change)="sortProducts(sortBy)">
+          <option value="name">Sort by Name</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+        </select>
+      </div>
+
+      <div class="products-grid">
+        <div *ngFor="let product of filteredProducts" class="product-card">
+          <div class="product-image">
+            <img [src]="product.image" [alt]="product.name">
+            <div class="product-actions">
+              <button class="quick-view">Quick View</button>
+              <button class="add-to-cart" (click)="addToCart(product)">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>{{product.name}}</h3>
+            <p class="category">{{product.category}}</p>
+            <div class="price">
+              <span class="current-price">${{product.price}}</span>
+              <span class="original-price" *ngIf="product.originalPrice">${{product.originalPrice}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pagination" *ngIf="totalPages > 1">
+        <button 
+          *ngFor="let page of getPages()" 
+          [class.active]="page === currentPage"
+          (click)="onPageChange(page)"
+        >
+          {{page}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div> 

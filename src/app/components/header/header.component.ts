@@ -33,18 +33,6 @@ import { CartService } from '../../services/cart.service';
                 <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" (click)="toggleDropdown('about')">
-                  About & Help
-                </a>
-                <ul class="dropdown-menu" [class.show]="activeDropdown === 'about'">
-                  <li><a class="dropdown-item" routerLink="/about">About Us</a></li>
-                  <li><a class="dropdown-item" routerLink="/contact">Contact</a></li>
-                  <li><a class="dropdown-item" routerLink="/privacy-policy">Privacy Policy</a></li>
-                  <li><a class="dropdown-item" routerLink="/terms">Terms & Conditions</a></li>
-                  <li><a class="dropdown-item" routerLink="/refund">Refund Policy</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" (click)="toggleDropdown('collection')">
                   Collection
                 </a>
@@ -68,44 +56,70 @@ import { CartService } from '../../services/cart.service';
               <li class="nav-item">
                 <a class="nav-link" routerLink="/blog" routerLinkActive="active">Blog</a>
               </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" (click)="toggleDropdown('about')">
+                  About & Help
+                </a>
+                <ul class="dropdown-menu" [class.show]="activeDropdown === 'about'">
+                  <li><a class="dropdown-item" routerLink="/about">About Us</a></li>
+                  <li><a class="dropdown-item" routerLink="/contact">Contact</a></li>
+                  <li><a class="dropdown-item" routerLink="/privacy-policy">Privacy Policy</a></li>
+                  <li><a class="dropdown-item" routerLink="/terms">Terms & Conditions</a></li>
+                  <li><a class="dropdown-item" routerLink="/refund">Refund Policy</a></li>
+                </ul>
+              </li>
             </ul>
             <div class="header-actions">
-              <div class="search-container" [class.active]="isSearchActive">
-                <form class="search-form" (submit)="onSearch($event)">
-                  <input 
-                    type="text" 
-                    [(ngModel)]="searchQuery" 
-                    name="query"
-                    placeholder="Search products..." 
-                    class="search-input"
-                    [class.expanded]="isSearchActive"
-                  >
-                  <button type="submit" class="search-submit">
-                    <i class="fas fa-search"></i>
-                  </button>
-                </form>
-              </div>
-              <button class="search-toggle-btn action-btn" (click)="toggleSearch()">
+              <button class="icon-btn" (click)="toggleSearch()">
                 <i class="fas fa-search"></i>
-                <span class="btn-text">Search</span>
               </button>
-              <a routerLink="/cart" class="cart-btn action-btn">
+              <div class="dropdown">
+                <button class="icon-btn" (click)="toggleDropdown('auth')">
+                  <i class="fas fa-user"></i>
+                </button>
+                <ul class="dropdown-menu" [class.show]="activeDropdown === 'auth'">
+                  <li>
+                    <a class="dropdown-item" [routerLink]="['/login']" (click)="closeDropdown()">
+                      <i class="fas fa-sign-in-alt"></i> Login
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" [routerLink]="['/signup']" (click)="closeDropdown()">
+                      <i class="fas fa-user-plus"></i> Register
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <a routerLink="/cart" class="icon-btn cart-icon">
                 <i class="fas fa-shopping-cart"></i>
-                <span class="btn-text">Cart</span>
-                <span class="badge" *ngIf="cartCount > 0">{{cartCount}}</span>
+                <span class="cart-count" *ngIf="cartCount > 0">{{cartCount}}</span>
               </a>
-              <button class="clear-cart-btn action-btn" (click)="clearCart()" title="Clear Cart">
-                <i class="fas fa-trash"></i>
-                <span class="btn-text">Clear</span>
-              </button>
-              <button class="menu-btn action-btn" (click)="toggleMenu()">
-                <i class="fas fa-bars"></i>
-                <span class="btn-text">Menu</span>
-              </button>
             </div>
           </div>
         </div>
       </nav>
+
+      <!-- Search Overlay -->
+      <div class="search-overlay" *ngIf="isSearchActive">
+        <div class="container">
+          <form class="search-form" (submit)="onSearch($event)">
+            <input 
+              type="text" 
+              [(ngModel)]="searchQuery" 
+              name="query"
+              placeholder="Search products..." 
+              class="search-input"
+              autofocus
+            >
+            <button type="submit" class="search-submit">
+              <i class="fas fa-search"></i>
+            </button>
+            <button type="button" class="close-search" (click)="toggleSearch()">
+              <i class="fas fa-times"></i>
+            </button>
+          </form>
+        </div>
+      </div>
     </header>
   `,
   styles: [`
@@ -121,11 +135,11 @@ import { CartService } from '../../services/cart.service';
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 
       .navbar {
-        padding: 15px 0;
+        padding: 10px 0;
 
         .navbar-brand {
           img {
-            height: 100px;
+            height: 80px;
             width: auto;
             max-width: 100%;
             object-fit: contain;
@@ -149,7 +163,7 @@ import { CartService } from '../../services/cart.service';
 
         .navbar-nav {
           .nav-item {
-            margin: 0 15px;
+            margin: 0 12px;
             position: relative;
 
             &::after {
@@ -169,10 +183,10 @@ import { CartService } from '../../services/cart.service';
 
             .nav-link {
               font-family: 'Poppins', sans-serif;
-              font-size: 15px;
+              font-size: 16px;
               font-weight: 500;
               color: #2c3e50;
-              padding: 8px 0;
+              padding: 6px 14px;
               transition: all 0.3s ease;
               letter-spacing: 0.3px;
 
@@ -261,124 +275,133 @@ import { CartService } from '../../services/cart.service';
           align-items: center;
           gap: 15px;
 
-          .search-container {
-            position: relative;
-            transition: all 0.3s ease;
-          }
-
-          .search-form {
-            display: flex;
-            align-items: center;
-          }
-
-          .search-input {
-            font-family: 'Poppins', sans-serif;
+          .icon-btn {
+            background: none;
             border: none;
-            background: rgba(0,123,255,0.05);
-            border-radius: 50px;
-            padding: 8px 15px;
-            font-size: 14px;
+            padding: 8px;
             color: #2c3e50;
-            width: 180px;
+            cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            
-            &:focus {
-              outline: none;
-              width: 220px;
-              background: rgba(0,123,255,0.1);
-              box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: relative;
+            font-size: 18px;
+
+            &:hover {
+              color: #007bff;
+              transform: translateY(-2px);
             }
 
-            &::placeholder {
-              color: #95a5a6;
-              font-weight: 300;
+            &.cart-icon {
+              .cart-count {
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                background: #007bff;
+                color: white;
+                font-size: 12px;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+            }
+          }
+
+          .dropdown {
+            position: relative;
+
+            .dropdown-menu {
+              position: absolute;
+              right: 0;
+              min-width: 150px;
+              padding: 10px 0;
+              margin-top: 10px;
+              border: none;
+              border-radius: 12px;
+              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+              display: none;
+              opacity: 0;
+              transform: translateY(10px);
+              transition: all 0.3s ease;
+
+              &.show {
+                display: block;
+                opacity: 1;
+                transform: translateY(0);
+              }
+
+              .dropdown-item {
+                padding: 10px 20px;
+                color: #2c3e50;
+                font-size: 14px;
+                transition: all 0.3s ease;
+
+                &:hover {
+                  background: linear-gradient(90deg, rgba(0,123,255,0.05), rgba(0,189,212,0.05));
+                  color: #007bff;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .search-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.95);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+
+        .search-form {
+          position: relative;
+          width: 100%;
+          max-width: 600px;
+
+          .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: 2px solid #eee;
+            border-radius: 30px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+
+            &:focus {
+              outline: none;
+              border-color: #007bff;
+            }
+          }
+
+          .search-submit,
+          .close-search {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #2c3e50;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+              color: #007bff;
             }
           }
 
           .search-submit {
-            background: none;
-            border: none;
-            color: #007bff;
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            
-            &:hover {
-              color: #0056b3;
-            }
-          }
-          
-          .action-btn {
-            display: flex;
-            align-items: center;
-            background: #f8f9fa;
-            border: none;
-            padding: 8px 12px;
-            font-size: 14px;
-            color: #2c3e50;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 50px;
-            font-family: 'Poppins', sans-serif;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            
-            i {
-              margin-right: 6px;
-              font-size: 16px;
-            }
-
-            .btn-text {
-              font-weight: 500;
-            }
-
-            .badge {
-              display: inline-flex;
-              align-items: center;
-              justify-content: center;
-              background-color: #007bff;
-              color: white;
-              border-radius: 50%;
-              height: 20px;
-              min-width: 20px;
-              padding: 0 5px;
-              font-size: 12px;
-              margin-left: 5px;
-            }
-
-            &:hover {
-              background-color: #007bff;
-              color: white;
-              transform: translateY(-2px);
-              box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            }
+            right: 60px;
           }
 
-          .search-toggle-btn {
-            background: #f8f9fa;
-          }
-
-          .cart-btn {
-            background: #f8f9fa;
-            text-decoration: none;
-          }
-
-          .clear-cart-btn {
-            background: #fff0f0;
-            color: #e74c3c;
-            
-            &:hover {
-              background-color: #e74c3c;
-              color: white;
-            }
-          }
-
-          .menu-btn {
-            display: none;
+          .close-search {
+            right: 20px;
+            font-size: 24px;
           }
         }
       }
@@ -393,60 +416,33 @@ import { CartService } from '../../services/cart.service';
 
           .navbar-collapse {
             position: fixed;
-            top: 70px;
-            left: 0;
-            right: 0;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
             background: white;
             padding: 20px;
-            height: calc(100vh - 70px);
-            overflow-y: auto;
             transition: all 0.3s ease;
-            transform: translateX(-100%);
 
             &.show {
-              transform: translateX(0);
+              right: 0;
             }
-          }
 
-          .navbar-nav {
-            .nav-item {
-              margin: 10px 0;
+            .navbar-nav {
+              margin-top: 40px;
 
-              .dropdown-menu {
-                position: static;
-                box-shadow: none;
-                padding-left: 20px;
+              .nav-item {
+                margin: 10px 0;
+
+                .nav-link {
+                  font-size: 18px;
+                }
               }
             }
-          }
 
-          .header-actions {
-            margin-top: 20px;
-            justify-content: flex-end;
-            
-            .search-container {
-              display: none;
-            }
-            
-            .search-toggle-btn {
-              display: block;
-            }
-
-            .action-btn {
-              .btn-text {
-                display: none;
-              }
-              
-              i {
-                margin-right: 0;
-              }
-              
-              padding: 8px;
-              border-radius: 50%;
-            }
-
-            .menu-btn {
-              display: flex;
+            .header-actions {
+              margin-top: 20px;
+              justify-content: center;
             }
           }
         }
@@ -456,42 +452,46 @@ import { CartService } from '../../services/cart.service';
 })
 export class HeaderComponent {
   isMenuOpen = false;
-  activeDropdown: string | null = null;
   isSearchActive = false;
+  activeDropdown: string | null = null;
   searchQuery = '';
   cartCount = 0;
 
   constructor(private cartService: CartService) {
-    this.cartService.cart$.subscribe(items => {
-      this.cartCount = items.reduce((total, item) => total + item.quantity, 0);
+    this.cartService.cart$.subscribe(cart => {
+      this.cartCount = cart.length;
     });
   }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
-    if (!this.isMenuOpen) {
+    if (this.isMenuOpen) {
       this.activeDropdown = null;
     }
   }
 
-  toggleDropdown(name: string) {
-    this.activeDropdown = this.activeDropdown === name ? null : name;
-  }
-  
   toggleSearch() {
     this.isSearchActive = !this.isSearchActive;
+    if (!this.isSearchActive) {
+      this.searchQuery = '';
+    }
   }
-  
+
+  toggleDropdown(dropdown: string) {
+    if (this.activeDropdown === dropdown) {
+      this.activeDropdown = null;
+    } else {
+      this.activeDropdown = dropdown;
+    }
+  }
+
+  closeDropdown() {
+    this.activeDropdown = null;
+  }
+
   onSearch(event: Event) {
     event.preventDefault();
-    if (this.searchQuery.trim()) {
-      console.log('Searching for:', this.searchQuery);
-      // Here you would implement the actual search logic
-    }
-    this.searchQuery = '';
-  }
-  
-  clearCart() {
-    this.cartService.clearCart();
+    // Handle search logic here
+    console.log('Searching for:', this.searchQuery);
   }
 } 

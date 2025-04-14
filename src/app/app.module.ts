@@ -1,15 +1,12 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { provideRouter } from '@angular/router';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { AppRoutingModule } from './app-routing.module';
+import { routes } from './app.routes';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    RouterModule,
-    AppRoutingModule,
-    HeaderComponent,
-    FooterComponent
+    provideRouter(routes),
+    provideAnimations()
   ]
-}); 
+});
