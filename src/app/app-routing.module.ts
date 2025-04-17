@@ -16,7 +16,7 @@ export const routes: Routes = [
   },
   {
     path: 'contact',
-    loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactModule)
+    loadComponent: () => import('./pages/contact/contact.component').then(m => m.ContactComponent)
   },
   {
     path: 'privacy-policy',
