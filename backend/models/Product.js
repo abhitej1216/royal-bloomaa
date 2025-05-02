@@ -14,8 +14,13 @@ const productSchema = new mongoose.Schema({
     required: true
   },
   originalPrice: {
-    type: Number,
+    type: Number,  // Changed from Number to String
     required: true
+  },
+  gender: {
+    type: String,
+    required: true,
+    enum: ['Men', 'Women', 'Unisex']
   },
   category: {
     type: String,
@@ -26,6 +31,10 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true,
     enum: ['Casual', 'Business', 'Evening', 'Special Occasion']
+  },
+  inspiredBy: {
+    type: String,
+    required: true
   },
   image: {
     type: String,
@@ -39,11 +48,7 @@ const productSchema = new mongoose.Schema({
     type: Number,
     required: true,
     default: 0
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now
   }
 });
 
-module.exports = mongoose.model('Product', productSchema); 
+module.exports = mongoose.model('Product', productSchema);

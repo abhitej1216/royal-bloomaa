@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="section-title">Our Products</h2>
+      
+      <!-- Category filters -->
+      <div class="category-filters mb-4">
+        <button class="btn btn-outline-primary me-2" (click)="loadProducts()">All</button>
+        <button class="btn btn-outline-primary me-2" (click)="loadProductsByCategory('Perfumes')">Perfumes</button>
+        <button class="btn btn-outline-primary me-2" (click)="loadProductsByCategory('Attars')">Attars</button>
+        <button class="btn btn-outline-primary me-2" (click)="loadProductsByCategory('Body Mists')">Body Mists</button>
+        <button class="btn btn-outline-primary" (click)="loadProductsByCategory('Gift Sets')">Gift Sets</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Loading spinner -->
+  <div *ngIf="loading" class="text-center py-5">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  
+  <!-- Error message -->
+  <div *ngIf="error" class="alert alert-danger">
+    {{ error }}
+  </div>
+  
+  <!-- Products grid -->
+  <div class="row" *ngIf="!loading && !error">
+    <div class="col-md-4 col-lg-3 mb-4" *ngFor="let product of products">
+      <div class="product-card">
+        <div class="product-image">
+          <img [src]="product.image" alt="{{ product.name }}" class="img-fluid">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">{{ product.name }}</h3>
+          <div class="product-price">
+            <span class="current-price">₹{{ product.price }}</span>
+            <span class="original-price">{{ product.originalPrice }}</span>
+          </div>
+          <div class="product-rating">
+            <span class="stars">
+              <i class="fas fa-star" *ngFor="let star of [1,2,3,4,5]" 
+                 [class.filled]="star <= product.rating" [class.half-filled]="star - 0.5 <= product.rating && star > product.rating"></i>
+            </span>
+            <span class="rating-value">{{ product.rating }}</span>
+          </div>
+          <button class="btn btn-primary btn-sm mt-2">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- No products found -->
+  <div *ngIf="!loading && !error && products.length === 0" class="text-center py-5">
+    <p>No products found.</p>
+  </div>
+</div>

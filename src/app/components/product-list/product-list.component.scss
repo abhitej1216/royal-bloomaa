@@ -1,0 +1,132 @@
+// Product list styles
+.section-title {
+  margin-bottom: 2rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.product-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .product-image {
+    height: 200px;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  
+  .product-info {
+    padding: 1.25rem;
+    background: white;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    
+    .product-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+    }
+    
+    .product-price {
+      margin-bottom: 0.5rem;
+      
+      .current-price {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #007bff;
+        margin-right: 0.5rem;
+      }
+      
+      .original-price {
+        text-decoration: line-through;
+        color: #6c757d;
+        font-size: 0.9rem;
+      }
+    }
+    
+    .product-rating {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      
+      .stars {
+        color: #ffc107;
+        margin-right: 0.5rem;
+        
+        .filled {
+          color: #ffc107;
+        }
+        
+        .half-filled {
+          position: relative;
+          
+          &::after {
+            content: '\f089'; // Unicode for half star
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+            overflow: hidden;
+            color: #ffc107;
+          }
+        }
+      }
+      
+      .rating-value {
+        font-size: 0.85rem;
+        color: #6c757d;
+      }
+    }
+    
+    .btn-primary {
+      margin-top: auto;
+      background-color: #007bff;
+      border-color: #007bff;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: #0069d9;
+        border-color: #0062cc;
+      }
+    }
+  }
+}
+
+// Loading and error states
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+.alert-danger {
+  border-radius: 8px;
+}
